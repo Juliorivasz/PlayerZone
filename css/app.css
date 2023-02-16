@@ -1,0 +1,91 @@
+.carousel {
+    width: 90%;
+    max-width: 120em;
+    background-color: #f4f4f4;
+    border: 2px solid black;
+    border-radius: 1em;
+    box-shadow: 1em 1em 1em -1em grey;
+    overflow: hidden;
+    position: absolute;
+    right: calc(100% / 20.588);
+    top: 100px;
+}
+
+.carousel .big {
+    width: 200%;
+    border-radius: 1rem;
+    height: 100%;
+    box-shadow: 1em 1em 1em -1em grey;
+
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all 3s ease;
+    transform: translateX(0);
+}
+
+.carousel .img {
+    width: calc( 100% / 2);
+    height: 500px;
+    background-color: tomato;
+    min-height: 10vh;
+    border-radius: .5rem;
+    box-shadow: 1em 1em 1em -1em grey;
+
+    border: 2px solid black;
+
+}
+
+.carousel .arrows {
+    width: calc(100% - 2em);
+    padding: 0;
+    margin: 1em;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    position: absolute;
+    z-index: 3;
+    top: 220px;
+}
+
+.carousel .arrow {
+    width: 5em;
+    height: 3em;
+}
+
+.carousel .activo {
+    display: none;
+}
+
+.carousel .points {
+    width: 100%;
+    padding: 0.4em;
+    margin: 1em 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: absolute;
+    z-index: 1;
+    top: 380px;
+}
+
+.carousel .point {
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    box-shadow: .2em .2em .9em gray;
+
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.carousel .point.active {
+    background-color: #00ffff;
+}
