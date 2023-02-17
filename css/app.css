@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* carousel */
 .carousel {
     width: 90%;
     max-width: 120em;
