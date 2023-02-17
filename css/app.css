@@ -2,7 +2,6 @@
     width: 90%;
     max-width: 120em;
     background-color: #f4f4f4;
-    border: 2px solid black;
     border-radius: 1em;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
@@ -34,9 +33,6 @@
     min-height: 10vh;
     border-radius: .5rem;
     box-shadow: 1em 1em 1em -1em grey;
-
-    border: 2px solid black;
-
 }
 
 .carousel .arrows {
@@ -57,6 +53,10 @@
     height: 3em;
 }
 
+.carousel .no-activo {
+    opacity: .3;
+}
+
 .carousel .activo {
     display: none;
 }
@@ -73,12 +73,12 @@
     list-style: none;
     position: absolute;
     z-index: 1;
-    top: 380px;
+    top: 400px;
 }
 
 .carousel .point {
-    width: 2em;
-    height: 2em;
+    width: 1em;
+    height: 1em;
     background-color: white;
     box-shadow: .2em .2em .9em gray;
 

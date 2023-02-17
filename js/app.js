@@ -53,7 +53,6 @@ point.forEach( (cadaPunto, i) => {
             point[0].classList.remove('active');
             point[count].classList.add('active');
         }
-
     };
     setInterval(flash,6000);
 })
@@ -61,14 +60,19 @@ let posicion = 0;
 arrow.forEach((Flecha, i)=> {
     Flecha.addEventListener('click', ()=> {
         if(arrow[i].alt === 'arrow right'){
+            // cambiar la opacidad de la flecha a color aqua
+            listArrowAqua[1].style.opacity = 1;
             listArrow[1].className = 'activo right';
             listArrowAqua[1].className = 'no-activo right';
+            // use la funcion para desplazar la imagen
             desplazarImagen();          
             setTimeout(()=>{
                 listArrow[1].className = 'no-activo right';
                 listArrowAqua[1].className = 'activo right';
             },200)
         }else {
+            // cambiar la opacidad de la flecha a color aqua
+            listArrowAqua[0].style.opacity = 1;
             listArrow[0].className = 'activo right';
             listArrowAqua[0].className = 'no-activo right';
             desplazarImagen();
