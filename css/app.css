@@ -141,12 +141,21 @@
 
 .type__products:hover {
     transform: scale(1.2);
+    animation: opacitied 1s ease;
     background: url(../img/fondo2.jpg);
     background-size: 100% 100%;
     cursor: pointer;
     color: #f4f4f4;
 }
 
+@keyframes opacitied {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
 /* Products */
 
 .products {
@@ -155,5 +164,68 @@
 }
 
 .products .container__card {
-    background-color: #00ffff;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 2rem;
+    /* background-color: #00ffff; */
+}
+
+.products .container__img__card {
+    width: 50%;
+    margin: 1rem 0 1rem 1rem;
+    background-color: #f4f4f4;
+}
+
+.products .img__card {
+    width: 100%;
+}
+
+.products .container__info__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 50%;
+    margin: 1rem 0;
+    background-color: #f4f4f4;
+}
+
+.products .title__card {
+    text-align: center;
+    padding: .2rem;
+    text-align: center;
+}
+
+.products .container__check__stock {
+    display: flex;
+    margin: 0 1rem ;
+}
+
+.products .stock__products {
+    margin: .5rem;
+    display: block;
+    width: 100%;
+}
+
+.products .price__products {
+    display: block;
+    margin: .5rem 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.products .financing {
+    margin: 0.5rem 1rem;
+}
+
+.products .btn__products {
+    width: 90%;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: .5rem 1rem;
+    padding: .7rem;
+    border-radius: 20px;
 }
