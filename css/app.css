@@ -1,7 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* navbar y header */
 *{
+
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    
+
 }
+
+
+
+
+.header{
+    background-color: rgb(15, 0, 68);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+}
+
+.header .logo{
+    width: 70px;   
+    cursor: pointer; 
+    transition: 0.5s;    
+}
+.div-logo{
+    margin-right: auto;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+
+   
+}
+.div-categorias{
+    margin-right: auto;
+    
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.header .nav-links li:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+.header a button {
+    font-size: 16px;
+    background-color: rgb(34, 55, 151);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 8px;
+    
+}
+
+.header a button:hover{
+    transform: scale(1.2);
+}
+
+
+.logo-carrito{
+    width: 30px;
+    height: 30px;
+    
+}
+
+#carrito{
+    background-color: transparent;
+
+}
+
+
 
 /* carousel */
 .section__carousel {
@@ -176,7 +271,7 @@
 .products .container__img__card {
     width: 50%;
     margin: 1rem 0 1rem 1rem;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
 }
 
 .products .img__card {
@@ -190,7 +285,7 @@
     flex-flow: column;
     width: 50%;
     margin: 1rem 0;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
 }
 
 .products .title__card {
@@ -228,4 +323,10 @@
     margin: .5rem 1rem;
     padding: .7rem;
     border-radius: 20px;
+    background-color: transparent;
+}
+
+.products .container__card:hover {
+    background-color: #00ffff;
+    transform: scale(1.1);
 }
