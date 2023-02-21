@@ -102,19 +102,16 @@
 .section__carousel {
     height: 100vh;
     background: url(../img/fondo.jpg);
-    background-repeat: none;
     background-size: cover;
 }
 
 .carousel {
-    width: 90%;
+    width: 100%;
     max-width: 120em;
     background-color: #f4f4f4;
-    border-radius: 1em;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
     position: absolute;
-    right: calc(100% / 20.588);
     top: 100px;
 }
 
@@ -206,16 +203,16 @@
 
 .section__type__products {
     position: absolute;
-    top: 650px;
+    top: 610px;
     width: 100%;
 }
 
 .ul__type__products {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    min-width: 100vh;
     margin: 1rem;
 }
 
@@ -228,6 +225,7 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    margin: 1rem;
     box-shadow: 1em 1em 1em -1em grey;
     border-radius: 10px;
     transition: all .5s ease-out;
@@ -255,8 +253,8 @@
 
 .products {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    min-width: 100vh;
     min-height: 100vh;
 }
 
@@ -267,13 +265,11 @@
     height: 300px;
     border-radius: 10px;
     margin: 2rem;
-    /* background-color: #00ffff; */
 }
 
 .products .container__img__card {
     width: 50%;
     margin: 1rem 0 1rem 1rem;
-    /* background-color: #f4f4f4; */
 }
 
 .products .img__card {
@@ -286,8 +282,7 @@
     align-items: center;
     flex-flow: column;
     width: 50%;
-    margin: 1rem 0;
-    /* background-color: #f4f4f4; */
+    margin: 1rem 1rem 1rem 0;
 }
 
 .products .title__card {
