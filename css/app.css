@@ -254,6 +254,8 @@
 /* Products */
 
 .products {
+    display: flex;
+    justify-content: space-around;
     min-width: 100vh;
     min-height: 100vh;
 }
@@ -327,6 +329,5 @@
 }
 
 .products .container__card:hover {
-    background-color: #00ffff;
     transform: scale(1.1);
 }
