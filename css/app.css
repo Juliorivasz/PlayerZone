@@ -8,17 +8,12 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    
-
 }
-
-
-
 
 .header{
     background-color: rgb(15, 0, 68);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 85px;
     padding: 5px 10%;
@@ -27,21 +22,27 @@
     z-index: 4;
 }
 
+.div-izquierdo{
+    display: flex;
+}
+
+.div-derecho{
+    display: flex;
+}
+
 .header .logo{
     width: 70px;   
     cursor: pointer; 
     transition: 0.5s;    
 }
 .div-logo{
-    margin-right: auto;
+    margin-right: 0;
 }
 
 .logo:hover{
     transform: scale(1.2);
 }
 
-
-  
 .btn-menu{
     font-size: 16px;
     color: white;
@@ -49,10 +50,7 @@
     padding: 8px;
     cursor: pointer;
     margin: 8px;
-    margin-right: 300px;
 }
-
-
 
 .header .sub-menu li{
     display: inline-block;
@@ -68,57 +66,56 @@
     transform: scale(1.1);
 }
 
-
-
 .btn-menu{
     position: relative;
-    
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.btn-menu:hover{
+    background-color: rgb(35, 46, 98);
 }
 
 .sub-menu{
     background-color: rgb(15, 0, 68);
-    display: none;
-    position: block;
-    top: 100%;
-    left: 0;
+    position: absolute;
+    display: none;    
+    width: 20%;
+    top: 4rem;
     padding: 40px;
-    margin: 20px;
-    border-radius: 5px;
+    margin: 0rem 20px 20px 20px;
+    border-radius: 10px;
 }
 
 .btn-menu:hover + .sub-menu{
  display: block;
- 
-
 }
+
 
 .sub-menu:hover{
     display: block;
-
 }
 
-
 .sub-menu li:hover{
-    background-color: black;
+    background-color: rgb(35, 46, 98);
     border-radius: 5px;
 }
 
-
-
-
-
+.container-button{
+    padding: 6px;
+}
 
 .header a button {
     font-size: 16px;
-    background-color: rgb(34, 55, 151);
+    background-color: rgb(35, 46, 98);
     color: white;
     border: none;
     padding: 8px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s;
-    margin: 8px;
-    
+    margin: 8px;    
 }
 
 .header a button:hover{
@@ -129,19 +126,19 @@
 .logos-nav{
     width: 30px;
     height: 30px;
-    
 }
 
 #logos-nav{
     background-color: transparent;
+}
 
+.container-barra-busqueda{
+    padding: 13px;
 }
 
 .header form .barra-busqueda {
     font-size: 16px;
     padding: 8px;
-    margin-left: 5px;
-    
     border-radius: 5px;
     border-color: rgb(255, 255, 255);
     color: white;
@@ -155,13 +152,6 @@
 
 
 
-
-
-
-
-
-
-
 /* carousel */
 .section__carousel {
     height: 100vh;
@@ -170,8 +160,7 @@
 }
 
 .carousel {
-    width: 100%;
-    max-width: 120em;
+    width: 100%;    
     background-color: #f4f4f4;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
