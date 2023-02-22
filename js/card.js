@@ -17,13 +17,17 @@ function card(title, imagen, stock, price, financing) {
                 </div>
             <span class="price__products">$ ${price} </span>
             <p class="financing">
-                Hasta en 12 cuotas de $ ${Math.round(financing/12)}.000
+                Hasta en 12 cuotas de <span class="price__card" >$ ${Math.round(financing/12)}.000</span>
                 Sin interés del precio de lista
             </p>
-            <button class="btn__products" type="button">agregar</button>
+            <button class="btn__products" type="button">
+            <img class="logo-carrito" src="img/logo carrito.png" alt="carrito">
+            <p class="text__btn" >agregar</p>
+            </button>
             </div>`;
     products.appendChild(div);
-}
+};
+
 card('i7 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '300.000', '400.000');
 card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
 card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');

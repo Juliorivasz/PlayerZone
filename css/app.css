@@ -255,16 +255,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    min-height: 100vh;
 }
 
 .products .container__card {
     display: flex;
     flex-flow: row nowrap;
-    width: 600px;
+    width: 500px;
     height: 300px;
     border-radius: 10px;
-    margin: 2rem;
+    margin: 2rem 1.5rem;
 }
 
 .products .container__img__card {
@@ -310,19 +309,32 @@
 }
 
 .products .financing {
+    font-size: .8rem;
     margin: 0.5rem 1rem;
 }
 
+.products .price__card {
+    color: blue;
+}
+
 .products .btn__products {
+    display: flex;
+    justify-content: center;
     width: 90%;
     text-transform: uppercase;
     font-size: 1.1rem;
     margin: .5rem 1rem;
     padding: .7rem;
     border-radius: 20px;
-    background-color: transparent;
+    background-color: violet;
+}
+
+.products .text__btn {
+    margin: 0.4rem 0 0.4rem 1rem;
 }
 
 .products .container__card:hover {
     transform: scale(1.1);
+    cursor: pointer;
+    border: 2px solid black;
 }
