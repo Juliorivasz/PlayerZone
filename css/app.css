@@ -44,22 +44,14 @@
   
 .btn-menu{
     font-size: 16px;
-    background-color: rgb(34, 55, 151);
     color: white;
     border: none;
     padding: 8px;
-    border-radius: 5px;
     cursor: pointer;
-    transition: 0.5s;
     margin: 8px;
-    position: absolute;
-    
-    
+    margin-right: 300px;
 }
 
-.btn-menu:hover{
-    transform: scale(1.2);
-}
 
 
 .header .sub-menu li{
@@ -68,7 +60,6 @@
     font-size: 16px;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    cursor: pointer;
     transition: 0.5s;
     width: 100%;
 }
@@ -85,12 +76,12 @@
 }
 
 .sub-menu{
-    background-color: rgb(34, 55, 151);
+    background-color: rgb(15, 0, 68);
     display: none;
     position: block;
     top: 100%;
     left: 0;
-    padding: 30px;
+    padding: 40px;
     margin: 20px;
     border-radius: 5px;
 }
@@ -103,7 +94,15 @@
 
 .sub-menu:hover{
     display: block;
+
 }
+
+
+.sub-menu li:hover{
+    background-color: black;
+    border-radius: 5px;
+}
+
 
 
 
@@ -152,6 +151,13 @@
 .header form .barra-busqueda:focus{
     outline: none;
 }
+
+
+
+
+
+
+
 
 
 
@@ -384,3 +390,5 @@
 .products .container__card:hover {
     transform: scale(1.1);
 }
+
+
