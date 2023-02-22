@@ -40,17 +40,29 @@
     transform: scale(1.2);
 }
 
-.header .nav-links{
-    list-style: none;
 
-   
-}
-.div-categorias{
-    margin-right: auto;
+  
+.btn-menu{
+    font-size: 16px;
+    background-color: rgb(34, 55, 151);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 8px;
+    position: absolute;
+    
     
 }
 
-.header .nav-links li{
+.btn-menu:hover{
+    transform: scale(1.2);
+}
+
+
+.header .sub-menu li{
     display: inline-block;
     padding: 5px 20px;
     font-size: 16px;
@@ -58,11 +70,41 @@
     text-decoration: none;
     cursor: pointer;
     transition: 0.5s;
+    width: 100%;
 }
 
-.header .nav-links li:hover{
+.header .sub-menu li:hover{
     transform: scale(1.1);
 }
+
+
+
+.btn-menu{
+    position: relative;
+    
+}
+
+.sub-menu{
+    background-color: rgb(34, 55, 151);
+    display: none;
+    position: block;
+    top: 100%;
+    left: 0;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.btn-menu:hover + .sub-menu{
+ display: block;
+ 
+
+}
+
+.sub-menu:hover{
+    display: block;
+}
+
 
 
 
@@ -85,16 +127,32 @@
 }
 
 
-.logo-carrito{
+.logos-nav{
     width: 30px;
     height: 30px;
     
 }
 
-#carrito{
+#logos-nav{
     background-color: transparent;
 
 }
+
+.header form .barra-busqueda {
+    font-size: 16px;
+    padding: 8px;
+    margin-left: 5px;
+    
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    color: white;
+    background-color:  rgb(15, 0, 68);
+}
+
+.header form .barra-busqueda:focus{
+    outline: none;
+}
+
 
 
 
