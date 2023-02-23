@@ -349,10 +349,11 @@ body{
     width: 300px;
     margin: 2rem 1.5rem;
     border-radius: 10px;
-    background-color: #f4f4f4;
+    background-color: transparent;
 }
 
 .products .container__img__card {
+    border-radius: 10px 10px 0 0;
     padding: 1.5rem;
     padding-bottom: 0;
     background-color: white;
@@ -364,11 +365,13 @@ body{
 
 .products .container__info__card {
     display: flex;
+    background-color: #f4f4f4;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    margin: 1.5rem;
-    margin-top: 0;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    border-radius: 0 0 10px 10px;
 }
 
 .products .title__card {
@@ -412,8 +415,9 @@ body{
     font-size: 1.1rem;
     margin: .5rem 1rem;
     padding: .7rem;
-    border-radius: 20px;
-    background-color: violet;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
 }
 
 .products .text__btn {
