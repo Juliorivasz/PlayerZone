@@ -308,21 +308,23 @@
 .products {
     display: flex;
     flex-wrap: wrap;
+    margin: 2rem;
     justify-content: space-around;
 }
 
 .products .container__card {
     display: flex;
-    flex-flow: row nowrap;
-    width: 500px;
-    height: 300px;
-    border-radius: 10px;
+    flex-direction: column;
+    width: 300px;
     margin: 2rem 1.5rem;
+    border-radius: 10px;
+    background-color: #f4f4f4;
 }
 
 .products .container__img__card {
-    width: 50%;
-    margin: 1rem 0 1rem 1rem;
+    padding: 1.5rem;
+    padding-bottom: 0;
+    background-color: white;
 }
 
 .products .img__card {
@@ -334,8 +336,8 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    width: 50%;
-    margin: 1rem 1rem 1rem 0;
+    margin: 1.5rem;
+    margin-top: 0;
 }
 
 .products .title__card {
@@ -390,7 +392,7 @@
 .products .container__card:hover {
     transform: scale(1.1);
     cursor: pointer;
-    border: 2px solid black;
+    box-shadow: 1em 1em 1em -1em gray;
 }
 
 

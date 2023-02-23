@@ -32,5 +32,9 @@ card('i7 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '
 card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
 card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
 card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+
+
 export default card;
 
