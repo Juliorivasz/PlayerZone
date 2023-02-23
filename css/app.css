@@ -296,32 +296,29 @@ body{
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    margin: 1rem;
+    margin: 0rem;
 }
 
 .type__products {
     display: flex;
-    border: 2px solid black;
-    width: 200px;
+    width: 25%;
     height: 200px;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    margin: 1rem;
-    box-shadow: 1em 1em 1em -1em grey;
-    border-radius: 10px;
+    box-shadow: 0em 1em 1em -1em grey;
     transition: all .5s ease-out;
+    background-color: #f4f4f4;
     
 }
 
 .type__products:hover {
     transform: scale(1.2);
     animation: opacitied 1s ease;
-    background: url(../img/fondo2.jpg);
-    background-size: 100% 100%;
     cursor: pointer;
-    color: #f4f4f4;
+    background-color: white;
+    border-radius: 7px;
 }
 
 @keyframes opacitied {
