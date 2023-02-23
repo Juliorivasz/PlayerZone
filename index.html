@@ -27,11 +27,13 @@
 
         <div class="div-derecho">
             <!--  esta seria la barra de busqueda -->
-            <form class="container-barra-busqueda">
-                <input class="barra-busqueda" type="text">
-            </form>
-            <a href="" class="btn"><button id="logos-nav"><img class="logos-nav" src="img/logo lupa.png" alt=""></button></a>        
-
+            <div class="div-barra-busqueda">
+                <form class="container-barra-busqueda">
+                    <input class="barra-busqueda" type="text">
+                </form>
+                <a href="" class="button-busqueda"><button id="logos-nav"><img class="logos-nav" src="img/logo lupa.png" alt=""></button></a>       
+    
+            </div>
             <!-- este seria el boton del carrito -->
             <a href="" class="container-button"><button>Contacto</button></a>
             <a href="" class="container-button"><button>Ingresar</button></a>
@@ -70,7 +72,29 @@
         <section class="products">
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-links">
+              <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li><a href="#"><img class="logos-redes-sociales" src="/img/logo facebook.png" alt=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><img class="logos-redes-sociales" src="/img/logo instagram.png" alt=""><i class="instagram"></i></a></li>
+                <li><a href="#"><img class="logos-redes-sociales" src="/img/logo youtube.png" alt=""><i class="youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-copy">
+            <p>&copy; 2023 Todos los derechos reservados.</p>
+          </div>
+    </footer>
     <script src="js/app.js"></script>
     <script type="module" src="js/card.js"></script>
 </body>

@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
-/* navbar y header */
+
+
 *{
 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+
 }
+
+body{
+    background: url('/img/azul\ con\ violeta.jpg');
+    background-size: cover;
+}
+
+/* navbar y header */
 
 .header{
     background-color: rgb(15, 0, 68);
@@ -133,21 +142,42 @@
     background-color: transparent;
 }
 
+.div-barra-busqueda{
+    position: relative;
+    display: inline-flex;
+}
+
 .container-barra-busqueda{
     padding: 13px;
+    padding-right: 0;
+    justify-content: flex-end;
+    display: flex;
 }
 
 .header form .barra-busqueda {
     font-size: 16px;
     padding: 8px;
-    border-radius: 5px;
-    border-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    border-color: transparent;
     color: white;
-    background-color:  rgb(15, 0, 68);
+    background-color: rgb(35, 46, 98);
+    cursor: pointer;
+
+    min-width: 63px;
+    width: 63px;
 }
+
+
 
 .header form .barra-busqueda:focus{
     outline: none;
+    width: 100%;
+}
+
+.button-busqueda{
+    position: absolute;
+    right: 0;
+    pointer-events: none;
 }
 
 
@@ -156,8 +186,7 @@
 /* carousel */
 .section__carousel {
     height: 100vh;
-    background: url(../img/fondo.jpg);
-    background-size: cover;
+
 }
 
 .carousel {
@@ -309,6 +338,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: transparent;
+    
 }
 
 .products .container__card {
@@ -394,3 +425,58 @@
 }
 
 
+
+
+
+
+
+
+
+
+/* esta seccion esta dedicada al footer de la pagina */
+
+footer {
+    background-color: rgb(15, 0, 68);
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  
+  .footer-container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+
+  
+  .footer-links ul, .footer-social ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li, .footer-social li {
+    margin: 0 10px;
+  }
+  
+  .footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-social i {
+    font-size: 20px;
+  }
+  
+  .footer-copy {
+    background-color: rgb(15, 0, 68);
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .logos-redes-sociales{
+    width: 25px;
+  }
