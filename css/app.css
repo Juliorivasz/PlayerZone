@@ -498,3 +498,7 @@ footer {
   .logos-redes-sociales{
     width: 25px;
   }
+
+  .logos-redes-sociales:hover{
+    opacity: 0.5;
+  }
