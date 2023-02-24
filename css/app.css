@@ -209,7 +209,6 @@ body{
 
 .carousel .img {
     width: calc( 100% / 2);
-    height: 500px;
     background-color: tomato;
     min-height: 10vh;
     border-radius: .5rem;
@@ -226,7 +225,7 @@ body{
     list-style: none;
     position: absolute;
     z-index: 3;
-    top: 220px;
+    top: 40%;
 }
 
 .carousel .arrow {
@@ -258,12 +257,12 @@ body{
     list-style: none;
     position: absolute;
     z-index: 1;
-    top: 400px;
+    top: 90%;
 }
 
 .carousel .point {
-    width: 1em;
-    height: 1em;
+    width: 5em;
+    height: .5em;
     background-color: white;
     box-shadow: .2em .2em .9em gray;
 
@@ -278,9 +277,8 @@ body{
 /* type products */
 
 .section__type__products {
-    position: absolute;
-    top: 610px;
     width: 100%;
+    margin: 2rem 0;
 }
 
 .ul__type__products {
@@ -326,12 +324,8 @@ body{
 }
 /* styles of card */
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-    justify-content: space-around;
-    background-color: transparent;
+.container__products {
+    margin-top: 5rem;
 }
 
 .container__products .title__section__products {
@@ -339,6 +333,17 @@ body{
     justify-content: center;
     text-transform: uppercase;
     margin: 2rem 0;
+    font-weight: bold;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 2.5rem;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    justify-content: space-around;
+    background-color: transparent;
 }
 
 .products .container__card {
