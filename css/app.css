@@ -16,177 +16,13 @@ body{
 
 /* navbar y header */
 
-@media screen and (min-width: 990px) {
-    
-    .header{
-        background-color: rgb(15, 0, 68);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 85px;
-        padding: 5px 10%;
-        width: 100%;
-        position: fixed;
-        z-index: 4;
-    }
-    
-    .div-izquierdo{
-        display: flex;
-    }
-    
-    .div-derecho{
-        display: flex;
-    }
-    
-    .header .logo{
-        width: 70px;   
-        cursor: pointer; 
-        transition: 0.5s;    
-    }
-    .div-logo{
-        margin-right: 0;
-    }
-    
-    .logo:hover{
-        transform: scale(1.2);
-    }
-    
-    .btn-menu{
-        font-size: 16px;
-        color: white;
-        border: none;
-        padding: 8px;
-        cursor: pointer;
-        margin: 8px;
-    }
-    
-    .header .sub-menu li{
-        display: inline-block;
-        padding: 5px 20px;
-        font-size: 16px;
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-        transition: 0.5s;
-        width: 100%;
-    }
-    
-    .header .sub-menu li:hover{
-        transform: scale(1.1);
-    }
-    
-    .btn-menu{
-        position: relative;
-        background-color: transparent;
-        border-radius: 8px;
-        padding: 20px;
-    }
-    
-    .btn-menu:hover{
-        background-color: rgb(35, 46, 98);
-    }
-    
-    .sub-menu{
-        background-color: rgb(15, 0, 68);
-        position: absolute;
-        display: none;    
-        width: 20%;
-        top: 4rem;
-        padding: 10px;
-        margin: 0rem 20px 20px 8px;
-        /* border-radius: 10px; */
-    }
-    
-    .btn-menu:hover + .sub-menu{
-     display: block;
-    }
-    
-    
-    .sub-menu:hover{
-        display: block;
-        cursor: pointer;
-    }
-    
-    .sub-menu li:hover{
-        background-color: rgb(35, 46, 98);
-        border-radius: 5px;
-    }
-    
-    .container-button{
-        padding: 6px;
-    }
-    
-    .header a button {
-        font-size: 16px;
-        background-color: rgb(35, 46, 98);
-        color: white;
-        border: none;
-        padding: 8px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.5s;
-        margin: 8px;    
-    }
-    
-    .header a button:hover{
-        transform: scale(1.2);
-    }
-    
-    
-    .logos-nav{
-        width: 30px;
-        height: 30px;
-    }
-    
-    #logos-nav{
-        background-color: transparent;
-    }
-    
-    .div-barra-busqueda{
-        position: relative;
-        display: inline-flex;
-    }
-    
-    .container-barra-busqueda{
-        padding: 13px;
-        padding-right: 0;
-        justify-content: flex-end;
-        display: flex;
-    }
-    
-    .header form .barra-busqueda {
-        font-size: 16px;
-        padding: 8px;
-        border-radius: 40px;
-        border-color: transparent;
-        color: white;
-        background-color: rgb(35, 46, 98);
-        cursor: pointer;
-    
-        min-width: 63px;
-        width: 63px;
-    }
-    
-    
-    .header form .barra-busqueda:focus{
-        outline: none;
-        width: 100%;
-    }
-    
-    .button-busqueda{
-        position: absolute;
-        right: 0;
-        pointer-events: none;
-    }
-
-
-}
-
-
 .header{
     background-color: rgb(15, 0, 68);
-    display: flex;    
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 85px;    
+    height: 85px;
+    padding: 5px 10%;
     width: 100%;
     position: fixed;
     z-index: 4;
@@ -201,15 +37,17 @@ body{
 }
 
 .header .logo{
-    width: 60px;  
-    height: 60px; 
+    width: 70px;   
+    cursor: pointer; 
+    transition: 0.5s;    
 }
 .div-logo{
-    display: flex;
     margin-right: 0;
 }
 
-
+.logo:hover{
+    transform: scale(1.2);
+}    
 
 .btn-menu{
     font-size: 16px;
@@ -219,6 +57,10 @@ body{
     cursor: pointer;
     margin: 8px;
 }
+
+.btn-menu-responsive{
+    display: none;
+}    
 
 .header .sub-menu li{
     display: inline-block;
@@ -230,6 +72,9 @@ body{
     width: 100%;
 }
 
+.header .sub-menu li:hover{
+    transform: scale(1.1);
+}
 
 .btn-menu{
     position: relative;
@@ -335,13 +180,233 @@ body{
     pointer-events: none;
 }
 
+.logo-user{
+    display: none;
+}
+
+.casilla-usuario{
+    display: flex;
+}
 
 
+/*  NAV RESPONSIVE  */
+
+@media screen and (max-width: 990px) {
+  
+    .header{
+        background-color: rgb(15, 0, 68);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 85px;
+        padding: 0px 0px;
+        width: 100%;
+        position: fixed;
+        z-index: 4;
+        
+    }
+    
+    .div-izquierdo{        
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    
+    .div-derecho{
+        display: flex;
+        margin-right: 15px;
+    }
+    
+    .header .logo{
+        width: 70px;   
+        cursor: pointer; 
+        transition: 0.5s;    
+    }
+    .div-logo{
+        margin-right: 0;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo:hover{
+        transform: scale(1.2);
+    }    
+    
+    .btn-menu{
+        font-size: 16px;
+        color: white;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        margin: 8px;
+    }   
+    
+    
+    .header .sub-menu li{
+        display: inline-block;
+        padding: 5px 20px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        
+        width: 100%;
+    }
+
+    .header .sub-menu li:hover{
+        transform: none;
+    }
+    
+    
+    
+    .btn-menu{        
+        display: none;
+    }
+    
+    
+    .sub-menu{
+        background-color: rgb(15, 0, 68);
+        position: absolute;
+        width: 60%;
+        top: 4.5rem;
+        padding: 20px;
+        margin: 0rem 20px 20px 0px;
+        display: none;     
+    }    
+
+    .logo-menu{
+        width: 40px;
+    }
+
+    .btn-menu-responsive{
+        position: relative;
+        background-color: transparent;
+        border-radius: 8px;
+        padding: 20px;
+        display: block;
+        cursor: pointer;
+        border-color: transparent;
+    }    
+
+    
 
 
+    .btn-menu-responsive:hover ~ .sub-menu{
+     display: block;
+    
+    }
+    
+    
+    .sub-menu:hover{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .sub-menu li:hover{
+        background-color: transparent;
+        transform: none;
+        
+    }
+    
+    .container-button{
+        padding: 6px;
+    }
+    
+    .header a button {
+        font-size: 16px;
+        background-color: rgb(35, 46, 98);
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        margin: 8px;    
+    }
+    
+    .header a button:hover{
+        transform: scale(1.2);
+    }
+    
+    
+    .logos-nav{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #logos-nav{
+        background-color: transparent;
+    }
+    
+    .div-barra-busqueda{
+        position: relative;
+        display: inline-flex;
+    }
+    
+    .container-barra-busqueda{
+        padding: 13px;
+        padding-right: 0;
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    .header form .barra-busqueda {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 40px;
+        border-color: transparent;
+        color: white;
+        background-color: rgb(35, 46, 98);
+        cursor: pointer;
+    
+        min-width: 63px;
+        width: 63px;
+    }
+    
+    
+    .header form .barra-busqueda:focus{
+        outline: none;
+        width: 100%;
+    }
+    
+    .button-busqueda{
+        position: absolute;
+        right: 0;
+        pointer-events: none;
+    }
 
 
+    .logo-user{
+        display: flex;
+        width: 40px;
+        height: 40px;
+        transition: 0.5s;
+    }
 
+    .casilla-usuario{
+        background-color: rgb(15, 0, 68);
+        position: absolute;
+        width: 60%;
+        top: 4.5rem;
+        right: -2rem;
+        padding: 20px;
+        margin: 0rem 20px 20px 0px;
+        display: none;
+    }
+
+    .casilla-usuario:hover{
+        display: block;
+    }
+
+    .logo-user:hover ~ .casilla-usuario{
+        display: block;
+    }
+
+    
+
+}
 
 
 
@@ -378,6 +443,7 @@ body{
 
 .carousel .img {
     width: calc( 100% / 2);
+    height: 500px;
     background-color: tomato;
     min-height: 10vh;
     border-radius: .5rem;
@@ -394,7 +460,7 @@ body{
     list-style: none;
     position: absolute;
     z-index: 3;
-    top: 40%;
+    top: 220px;
 }
 
 .carousel .arrow {
@@ -426,12 +492,12 @@ body{
     list-style: none;
     position: absolute;
     z-index: 1;
-    top: 90%;
+    top: 400px;
 }
 
 .carousel .point {
-    width: 5em;
-    height: .5em;
+    width: 1em;
+    height: 1em;
     background-color: white;
     box-shadow: .2em .2em .9em gray;
 
@@ -446,8 +512,9 @@ body{
 /* type products */
 
 .section__type__products {
+    position: absolute;
+    top: 610px;
     width: 100%;
-    margin: 2rem 0;
 }
 
 .ul__type__products {
@@ -493,8 +560,12 @@ body{
 }
 /* styles of card */
 
-.container__products {
-    margin-top: 5rem;
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    justify-content: space-around;
+    background-color: transparent;
 }
 
 .container__products .title__section__products {
@@ -502,17 +573,6 @@ body{
     justify-content: center;
     text-transform: uppercase;
     margin: 2rem 0;
-    font-weight: bold;
-    font-family: 'Roboto', 'sans-serif';
-    font-size: 2.5rem;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2rem;
-    justify-content: space-around;
-    background-color: transparent;
 }
 
 .products .container__card {
@@ -624,6 +684,7 @@ footer {
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
   }
   
 
