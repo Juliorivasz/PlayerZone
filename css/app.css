@@ -293,6 +293,7 @@ body{
 }
 
 .type__products {
+    
     display: flex;
     width: 25%;
     height: 200px;
@@ -303,6 +304,7 @@ body{
     box-shadow: 0em 1em 1em -1em grey;
     transition: all .5s ease-out;
     background-color: #f4f4f4;
+
     
 }
 
