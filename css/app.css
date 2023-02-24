@@ -139,6 +139,8 @@ body{
     height: 30px;
 }
 
+
+
 #logos-nav{
     background-color: transparent;
 }
@@ -187,6 +189,12 @@ body{
 .casilla-usuario{
     display: flex;
 }
+
+#lupa{
+    background-color: transparent;
+}
+
+
 
 
 /*  NAV RESPONSIVE  */
@@ -327,7 +335,7 @@ body{
     }
     
     .header a button:hover{
-        transform: scale(1.2);
+        transform: none;
     }
     
     
@@ -360,22 +368,38 @@ body{
         color: white;
         background-color: rgb(35, 46, 98);
         cursor: pointer;
-    
+        display: flex;
         min-width: 63px;
         width: 63px;
+        display: none;
     }
     
     
     .header form .barra-busqueda:focus{
-        outline: none;
-        width: 100%;
+        width: 363px;
+        display: flex;
     }
     
+
+    
     .button-busqueda{
-        position: absolute;
+        position: relative;
         right: 0;
         pointer-events: none;
     }
+
+    .div-barra-busqueda:hover{
+        top: 6rem;
+        background-color: rgb(15 0 68);
+        border-radius: 32px;
+        width: 24rem;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    
 
 
     .logo-user{
