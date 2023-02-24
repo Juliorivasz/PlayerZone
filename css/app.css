@@ -407,6 +407,7 @@ body{
 }
 
 .products .btn__products {
+    color: white;
     display: flex;
     justify-content: center;
     width: 90%;
@@ -415,8 +416,20 @@ body{
     margin: .5rem 1rem;
     padding: .7rem;
     border-radius: 10px;
-    background-color: white;
+    background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
+    transition: all 1s;
     border: none;
+}
+
+.products .btn__products:hover {
+    animation: cambio 2s forwards;
+    cursor: pointer;
+}
+
+@keyframes cambio {
+    from {
+    background-size: 200%;
+    }
 }
 
 .products .text__btn {

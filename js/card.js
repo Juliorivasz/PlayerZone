@@ -21,7 +21,7 @@ function card(title, imagen, stock, price, financing) {
                 Sin interés del precio de lista
             </p>
             <button class="btn__products" type="button">
-            <img class="logos-nav" src="img/logo carrito en negro.png" alt="carrito">
+            <img class="logos-nav" src="img/logo carrito.png" alt="carrito">
             <p class="text__btn" >agregar</p>
             </button>
             </div>`;
