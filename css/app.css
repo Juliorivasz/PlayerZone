@@ -16,13 +16,177 @@ body{
 
 /* navbar y header */
 
+@media screen and (min-width: 990px) {
+    
+    .header{
+        background-color: rgb(15, 0, 68);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 85px;
+        padding: 5px 10%;
+        width: 100%;
+        position: fixed;
+        z-index: 4;
+    }
+    
+    .div-izquierdo{
+        display: flex;
+    }
+    
+    .div-derecho{
+        display: flex;
+    }
+    
+    .header .logo{
+        width: 70px;   
+        cursor: pointer; 
+        transition: 0.5s;    
+    }
+    .div-logo{
+        margin-right: 0;
+    }
+    
+    .logo:hover{
+        transform: scale(1.2);
+    }
+    
+    .btn-menu{
+        font-size: 16px;
+        color: white;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        margin: 8px;
+    }
+    
+    .header .sub-menu li{
+        display: inline-block;
+        padding: 5px 20px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        transition: 0.5s;
+        width: 100%;
+    }
+    
+    .header .sub-menu li:hover{
+        transform: scale(1.1);
+    }
+    
+    .btn-menu{
+        position: relative;
+        background-color: transparent;
+        border-radius: 8px;
+        padding: 20px;
+    }
+    
+    .btn-menu:hover{
+        background-color: rgb(35, 46, 98);
+    }
+    
+    .sub-menu{
+        background-color: rgb(15, 0, 68);
+        position: absolute;
+        display: none;    
+        width: 20%;
+        top: 4rem;
+        padding: 10px;
+        margin: 0rem 20px 20px 8px;
+        /* border-radius: 10px; */
+    }
+    
+    .btn-menu:hover + .sub-menu{
+     display: block;
+    }
+    
+    
+    .sub-menu:hover{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .sub-menu li:hover{
+        background-color: rgb(35, 46, 98);
+        border-radius: 5px;
+    }
+    
+    .container-button{
+        padding: 6px;
+    }
+    
+    .header a button {
+        font-size: 16px;
+        background-color: rgb(35, 46, 98);
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        margin: 8px;    
+    }
+    
+    .header a button:hover{
+        transform: scale(1.2);
+    }
+    
+    
+    .logos-nav{
+        width: 30px;
+        height: 30px;
+    }
+    
+    #logos-nav{
+        background-color: transparent;
+    }
+    
+    .div-barra-busqueda{
+        position: relative;
+        display: inline-flex;
+    }
+    
+    .container-barra-busqueda{
+        padding: 13px;
+        padding-right: 0;
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    .header form .barra-busqueda {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 40px;
+        border-color: transparent;
+        color: white;
+        background-color: rgb(35, 46, 98);
+        cursor: pointer;
+    
+        min-width: 63px;
+        width: 63px;
+    }
+    
+    
+    .header form .barra-busqueda:focus{
+        outline: none;
+        width: 100%;
+    }
+    
+    .button-busqueda{
+        position: absolute;
+        right: 0;
+        pointer-events: none;
+    }
+
+
+}
+
+
 .header{
     background-color: rgb(15, 0, 68);
-    display: flex;
-    justify-content: space-between;
+    display: flex;    
     align-items: center;
-    height: 85px;
-    padding: 5px 10%;
+    height: 85px;    
     width: 100%;
     position: fixed;
     z-index: 4;
@@ -37,17 +201,15 @@ body{
 }
 
 .header .logo{
-    width: 70px;   
-    cursor: pointer; 
-    transition: 0.5s;    
+    width: 60px;  
+    height: 60px; 
 }
 .div-logo{
+    display: flex;
     margin-right: 0;
 }
 
-.logo:hover{
-    transform: scale(1.2);
-}
+
 
 .btn-menu{
     font-size: 16px;
@@ -68,9 +230,6 @@ body{
     width: 100%;
 }
 
-.header .sub-menu li:hover{
-    transform: scale(1.1);
-}
 
 .btn-menu{
     position: relative;
@@ -175,6 +334,16 @@ body{
     right: 0;
     pointer-events: none;
 }
+
+
+
+
+
+
+
+
+
+
 
 /* carousel */
 .section__carousel {
@@ -462,13 +631,24 @@ footer {
   }
   
   .footer-links li, .footer-social li {
-    margin: 0 10px;
+    margin: 0 10px;    
+  }
+
+  .footer-links li{
+    transition: 0.5s;
+  }
+
+  .footer-links li:hover{
+    transform: scale(1.1);
   }
   
   .footer-links a, .footer-social a {
     color: #fff;
     text-decoration: none;
+    
   }
+  
+
   
   .footer-social i {
     font-size: 20px;
