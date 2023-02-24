@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
-
-
 *{
 
     box-sizing: border-box;
@@ -168,7 +165,6 @@ body{
 }
 
 
-
 .header form .barra-busqueda:focus{
     outline: none;
     width: 100%;
@@ -179,9 +175,6 @@ body{
     right: 0;
     pointer-events: none;
 }
-
-
-
 
 /* carousel */
 .section__carousel {
@@ -329,7 +322,7 @@ body{
         opacity: 1;
     }
 }
-/* Products */
+/* styles of card */
 
 .products {
     display: flex;
@@ -337,7 +330,13 @@ body{
     margin: 2rem;
     justify-content: space-around;
     background-color: transparent;
-    
+}
+
+.container__products .title__section__products {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
 }
 
 .products .container__card {
@@ -415,19 +414,14 @@ body{
     padding: .7rem;
     border-radius: 10px;
     background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
-    transition: all 1s;
+    background-size: 200% auto;
     border: none;
+    transition: .5s;
 }
 
 .products .btn__products:hover {
-    animation: cambio 2s forwards;
+    background-position: 100%;
     cursor: pointer;
-}
-
-@keyframes cambio {
-    from {
-    background-size: 200%;
-    }
 }
 
 .products .text__btn {
@@ -439,15 +433,6 @@ body{
     cursor: pointer;
     box-shadow: 1em 1em 1em -1em gray;
 }
-
-
-
-
-
-
-
-
-
 
 /* esta seccion esta dedicada al footer de la pagina */
 

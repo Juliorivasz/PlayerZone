@@ -2,7 +2,7 @@
 // que quiera tener en el card
 const products = document.querySelector('.products');
 
-function card(title, imagen, stock, price, financing) {
+function card(section,title, imagen, stock, price, financing) {
     const div = document.createElement('div');
     div.classList.add('container__card');
     div.innerHTML = `
@@ -25,15 +25,13 @@ function card(title, imagen, stock, price, financing) {
             <p class="text__btn" >agregar</p>
             </button>
             </div>`;
-    products.appendChild(div);
+    section.appendChild(div);
 };
 
-card('i7 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '300.000', '400.000');
-card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card('i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card(products,'i7 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '300.000', '400.000');
+card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
 
 
 export default card;
