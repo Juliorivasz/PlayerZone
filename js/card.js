@@ -29,10 +29,10 @@ function card(section,title, imagen, stock, price, financing) {
     section.appendChild(div);
 };
 
-card(products,'i7 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '300.000', '400.000');
-card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
-card(products,'i5 11400 Procesador', './img/Procesador-Intel-Core-i5-11400.png', true, '300.000', '400.000');
+card(products,'i5 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '150.000', '280.000');
+card(products,'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '320.000', '400.000');
+card(products,'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
+card(products,'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '180.000', '320.000');
 
 
 export default card;
