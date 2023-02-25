@@ -145,43 +145,6 @@ body{
     background-color: transparent;
 }
 
-.div-barra-busqueda{
-    position: relative;
-    display: inline-flex;
-}
-
-.container-barra-busqueda{
-    padding: 13px;
-    padding-right: 0;
-    justify-content: flex-end;
-    display: flex;
-}
-
-.header form .barra-busqueda {
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 40px;
-    border-color: transparent;
-    color: white;
-    background-color: rgb(35, 46, 98);
-    cursor: pointer;
-
-    min-width: 63px;
-    width: 63px;
-}
-
-
-.header form .barra-busqueda:focus{
-    outline: none;
-    width: 100%;
-}
-
-.button-busqueda{
-    position: absolute;
-    right: 0;
-    pointer-events: none;
-}
-
 .logo-user{
     display: none;
 }
@@ -190,11 +153,19 @@ body{
     display: flex;
 }
 
-#lupa{
-    background-color: transparent;
+.div-barra-busqueda{
+    display: flex;
 }
 
+.container-barra-busqueda{
+    display: flex;
+}
 
+.logos-nav-lupa{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
 
 
 /*  NAV RESPONSIVE  */
@@ -371,12 +342,12 @@ body{
         display: flex;
         min-width: 63px;
         width: 63px;
-        display: none;
+        display: flex;
     }
     
     
     .header form .barra-busqueda:focus{
-        width: 363px;
+        width: 100%;
         display: flex;
     }
     
@@ -385,10 +356,11 @@ body{
     .button-busqueda{
         position: relative;
         right: 0;
-        pointer-events: none;
+
+
     }
 
-    .div-barra-busqueda:hover{
+    /* .div-barra-busqueda:hover{
         top: 6rem;
         background-color: rgb(15 0 68);
         border-radius: 32px;
@@ -397,7 +369,7 @@ body{
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
+    } */
 
     
 
