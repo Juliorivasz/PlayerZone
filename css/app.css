@@ -448,7 +448,7 @@ body{
     list-style: none;
     position: absolute;
     z-index: 3;
-    top: 40%;
+    top: 45%;
 }
 
 .carousel .arrow {
@@ -640,13 +640,19 @@ body{
     font-size: 1.5rem;
 }
 
+.products .price__products__old {
+    text-decoration: line-through;
+    color: #5792eb;
+    font-weight: bold;
+}
+
 .products .financing {
     font-size: .8rem;
     margin: 0.5rem 1rem;
 }
 
 .products .price__card {
-    color: blue;
+    color: #5792eb;
 }
 
 .products .btn__products {
