@@ -408,17 +408,13 @@ body{
 
 /* carousel */
 .section__carousel {
-    height: 100vh;
-
+    padding-top: 100px;
 }
 
 .carousel {
-    width: 100%;    
-    background-color: #f4f4f4;
+    width: 100%;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
-    position: absolute;
-    top: 100px;
 }
 
 .carousel .big {
@@ -426,20 +422,16 @@ body{
     border-radius: 1rem;
     height: 100%;
     box-shadow: 1em 1em 1em -1em grey;
-
-
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-
     transition: all 3s ease;
     transform: translateX(0);
 }
 
 .carousel .img {
     width: calc( 100% / 2);
-    height: 500px;
     background-color: tomato;
     min-height: 10vh;
     border-radius: .5rem;
@@ -456,12 +448,11 @@ body{
     list-style: none;
     position: absolute;
     z-index: 3;
-    top: 220px;
 }
 
 .carousel .arrow {
-    width: 5em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
 }
 
 .carousel .arrow:hover, .point:hover {
@@ -488,12 +479,11 @@ body{
     list-style: none;
     position: absolute;
     z-index: 1;
-    top: 400px;
 }
 
 .carousel .point {
-    width: 1em;
-    height: 1em;
+    width: 4rem;
+    height: .3rem;
     background-color: white;
     box-shadow: .2em .2em .9em gray;
 
@@ -505,11 +495,19 @@ body{
     background-color: #00ffff;
 }
 
+@media screen and (min-width: 300px) {
+    .arrows {
+        top: 18%;
+    }
+    
+    .points {
+        display: none !important;
+    }
+}
+
 /* type products */
 
 .section__type__products {
-    position: absolute;
-    top: 610px;
     width: 100%;
 }
 
@@ -554,7 +552,20 @@ body{
         opacity: 1;
     }
 }
-/* styles of card */
+
+/*card */
+
+.container__products {
+    margin-top: 3rem;
+}
+
+
+.container__products .title__section__products {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    margin: 4rem 0;
+}
 
 .products {
     display: flex;
@@ -562,13 +573,6 @@ body{
     margin: 2rem;
     justify-content: space-around;
     background-color: transparent;
-}
-
-.container__products .title__section__products {
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    margin: 2rem 0;
 }
 
 .products .container__card {
