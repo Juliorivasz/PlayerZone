@@ -497,23 +497,6 @@ body{
     background-color: #00ffff;
 }
 
-@media screen and (max-width: 500px) {
-    /* carousel responsive */
-    .arrows {
-        top: 8.5rem !important;
-    }
-    
-    .points {
-        display: none !important;
-    }
-
-    /* type products responsive */
-
-    .type__products {
-        font-size: .7rem;
-    }
-}
-
 /* type products */
 
 .section__type__products {
@@ -698,6 +681,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     background-color: #f4f4f4;
+    flex-wrap: wrap;
 }
 
 .shipping {
@@ -795,3 +779,22 @@ footer {
   .logos-redes-sociales:hover{
     opacity: 0.5;
   }
+
+  /* mobile */
+
+  @media screen and (max-width: 500px) {
+    /* carousel responsive */
+    .arrows {
+        top: 8.5rem !important;
+    }
+    
+    .points {
+        display: none !important;
+    }
+
+    /* type products responsive */
+
+    .type__products {
+        font-size: .7rem;
+    }
+}
