@@ -154,11 +154,28 @@ body{
 }
 
 .div-barra-busqueda{
+    position: flex;
+    top: 6rem;
+    background-color: rgb(15, 0, 68);
+    padding: 10px;
+    width: 100%;
+    left: 0;
     display: flex;
+    justify-content: flex-end;
+    
 }
 
 .container-barra-busqueda{
-    display: flex;
+    display: none;
+    
+}
+
+.barra-busqueda{
+    background-color: rgb(35, 46, 98);
+    border-radius: 8px;
+    border: none;
+    width: 90vw;
+    
 }
 
 .logos-nav-lupa{
