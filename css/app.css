@@ -465,6 +465,7 @@ body{
     list-style: none;
     position: absolute;
     z-index: 3;
+    top: 45%;
 }
 
 .carousel .arrow {
@@ -496,6 +497,7 @@ body{
     list-style: none;
     position: absolute;
     z-index: 1;
+    top: 85%;
 }
 
 .carousel .point {
@@ -512,20 +514,13 @@ body{
     background-color: #00ffff;
 }
 
-@media screen and (min-width: 300px) {
-    .arrows {
-        top: 18%;
-    }
-    
-    .points {
-        display: none !important;
-    }
-}
-
 /* type products */
 
 .section__type__products {
     width: 100%;
+    margin: 2rem 0;
+    overflow: hidden;
+    padding: 1rem 0;
 }
 
 .ul__type__products {
@@ -548,9 +543,7 @@ body{
     padding: 1rem;
     box-shadow: 0em 1em 1em -1em grey;
     transition: all .5s ease-out;
-    background-color: #f4f4f4;
-
-    
+    background-color: #f4f4f4;    
 }
 
 .type__products:hover {
@@ -602,6 +595,7 @@ body{
 }
 
 .products .container__img__card {
+    height: 100%;
     border-radius: 10px 10px 0 0;
     padding: 1.5rem;
     padding-bottom: 0;
@@ -614,6 +608,7 @@ body{
 
 .products .container__info__card {
     display: flex;
+    height: 100%;
     background-color: #f4f4f4;
     justify-content: center;
     align-items: center;
@@ -647,13 +642,19 @@ body{
     font-size: 1.5rem;
 }
 
+.products .price__products__old {
+    text-decoration: line-through;
+    color: #5792eb;
+    font-weight: bold;
+}
+
 .products .financing {
     font-size: .8rem;
     margin: 0.5rem 1rem;
 }
 
 .products .price__card {
-    color: blue;
+    color: #5792eb;
 }
 
 .products .btn__products {
@@ -685,6 +686,51 @@ body{
     transform: scale(1.1);
     cursor: pointer;
     box-shadow: 1em 1em 1em -1em gray;
+}
+
+
+/* shipping */
+.section__shipping {
+    margin: 1rem 0 0 0;
+}
+.container__shipping {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f4f4f4;
+    flex-wrap: wrap;
+}
+
+.shipping {
+    text-align: center;
+    margin: 2rem;
+}
+
+.truck__fast, .check__shield, .credit__card {
+    width: 50px;
+    height: 50px;
+}
+
+/* div rgb */
+
+.iva {
+    background: #ff0059;
+    background: -webkit-linear-gradient(45deg,rgba(255,0,0,1) 0%,rgba(255,0,255,1) 18%,rgba(0,0,255,1) 30%,rgba(0,240,255,1) 45%,rgba(0,255,0,1) 63%,rgba(255,255,0,1) 80%,rgba(255,120,0,1) 90%,rgba(255,0,0,1) 100%);
+    background-size: 400% 400%;
+    animation: rgbBg 20s linear infinite;
+    -moz-animation: rgbBg 20s linear infinite;
+    -webkit-animation: rgbBg 20s linear infinite;
+    position: relative;
+    padding: 3px;
+}
+
+@keyframes rgbBg {
+    0% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 400%;
+    }
 }
 
 /* esta seccion esta dedicada al footer de la pagina */
@@ -750,3 +796,22 @@ footer {
   .logos-redes-sociales:hover{
     opacity: 0.5;
   }
+
+  /* mobile */
+
+  @media screen and (max-width: 500px) {
+    /* carousel responsive */
+    .arrows {
+        top: 8.5rem !important;
+    }
+    
+    .points {
+        display: none !important;
+    }
+
+    /* type products responsive */
+
+    .type__products {
+        font-size: .7rem;
+    }
+}
