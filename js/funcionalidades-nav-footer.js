@@ -21,6 +21,8 @@ button.addEventListener('click', () => {
         input.style.display = 'flex'  
         div_barra_busqueda.style = 'position: absolute; justify-content: center'
         imagenLupa.src = "img/logo x.png";
+        sub_menu.style.display = 'none';
+        casilla_usuario.style.display = 'none';
         
         
     }
@@ -40,7 +42,13 @@ button_menu.addEventListener('click', () => {
     }
     else{
         sub_menu.style.display = 'block'; 
-        casilla_usuario.style.display = 'none';        
+        casilla_usuario.style.display = 'none'; 
+        input.style.display = 'none' 
+        div_barra_busqueda.style = 'position: flex'
+        imagenLupa.src = "img/logo lupa.png"; 
+        inputBusqueda.value = "";
+        
+
     }
 });
 
@@ -63,7 +71,11 @@ button_usuario.addEventListener('click', () => {
     }
     else{
         casilla_usuario.style.display = 'flex'; 
-        sub_menu.style.display = 'none';        
+        sub_menu.style.display = 'none';
+        input.style.display = 'none' 
+        div_barra_busqueda.style = 'position: flex'
+        imagenLupa.src = "img/logo lupa.png"; 
+        inputBusqueda.value = "";        
     }
 });
 
