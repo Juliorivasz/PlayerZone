@@ -726,6 +726,10 @@ footer {
     transition: 0.5s;
   }
 
+  .li_inicio{
+    cursor: pointer;
+  }
+
   .footer-links li:hover{
     transform: scale(1.1);
   }
@@ -755,6 +759,7 @@ footer {
   .logos-redes-sociales:hover{
     opacity: 0.5;
   }
+
 
   /* mobile */
 

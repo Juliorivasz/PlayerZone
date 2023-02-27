@@ -6,6 +6,18 @@ var imagenLupa = document.getElementById("logo_barra_busqueda");
 const inputBusqueda = document.querySelector("#id-barra-busqueda");
         
 
+//tocar logo e ir a pagina principa:
+
+const logo_ir_inicio = document.querySelector('.div-logo');
+logo_ir_inicio.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
+
+
 //despliegue de barra de busqueda:
 
 button.addEventListener('click', () => {
@@ -84,4 +96,15 @@ cerrar_x_usuario.addEventListener('click', () => {
 });
 
 
- 
+//  foncionalidades del footer
+
+
+// ir al inicio de la pagina
+const ir_a_inicio = document.querySelector('.li_inicio');
+ir_a_inicio.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'}
+  );
+});
