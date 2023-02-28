@@ -22,7 +22,8 @@
                     <li>COMPONENTES</li>
                     <li>PC ARMADAS</li>
                     <li>PERIFERICOS</li>
-                    <li>NOTEBOOKS</li>                
+                    <li>NOTEBOOKS</li>
+                    <img class="logo_x" src="/img/logo x.png" alt="">            
                 </ul>            
             </div>
         </div>
@@ -30,9 +31,10 @@
         <!--  esta seria la barra de busqueda -->
         <div class="div-barra-busqueda">
                 <form class="container-barra-busqueda">
-                    <input class="barra-busqueda" id="id-barra-busqueda" type="text">
+                    <input class="barra-busqueda" id="id-barra-busqueda" placeholder="¿Que producto buscas?" type="text">
                 </form>
-                <img class="logos-nav-lupa" src="img/logo lupa.png" alt="">     
+                <img id="logo_barra_busqueda" class="logos-nav-lupa" src="img/logo lupa.png" alt="">
+                 
     
         </div>       
 
@@ -42,8 +44,9 @@
             <div class="casilla-usuario">
                 <a href="" class="container-button"><button>Contacto</button></a>
                 <a href="" class="container-button"><button>Ingresar</button></a>
-                <a href="" class="container-button"><button>Registrarse</button></a>
+                <a href="" class="container-button"><button>Registrarse</button></a>                
                 <a href="" class="btn"><button id="logos-nav"><img class="logos-nav" src="img/logo carrito.png" alt=""></button></a> 
+                <img class="logo_x_usuario" src="/img/logo x.png" alt=""> 
             </div>
         </div>
     </header>
@@ -101,12 +104,15 @@
         </section>
         <div class="iva text-center"></div>
     </main>
+
+
+    <!-- seccion dedicada al footer -->
     <footer>
         <div class="footer-container">
 
             <div class="footer-links">
               <ul>
-                <li><a href="#">Inicio</a></li>
+                <li class="li_inicio">Inicio</li>
                 <li><a href="#">Productos</a></li>
                 <li><a href="#">Servicios</a></li>
                 <li><a href="#">Contacto</a></li>
@@ -114,8 +120,8 @@
             </div>
             <div class="footer-social">
               <ul>
-                <li><a href="#"><img class="logos-redes-sociales" src="/img/logo facebook.png" alt=""><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><img class="logos-redes-sociales" src="/img/logo instagram.png" alt=""><i class="instagram"></i></a></li>
+                <li><a target="_blank" href="https://www.facebook.com/" href="#"><img class="logos-redes-sociales" src="/img/logo facebook.png" alt=""><i class="fab fa-facebook"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/" href="#"><img class="logos-redes-sociales" src="/img/logo instagram.png" alt=""><i class="instagram"></i></a></li>
                 <li><a target="_blank" href="https://www.youtube.com/"><img class="logos-redes-sociales" src="/img/logo youtube.png" alt=""><i class="youtube"></i></a></li>
               </ul>
             </div>
@@ -124,6 +130,8 @@
             <p>&copy; 2023 Todos los derechos reservados.</p>
           </div>
     </footer>
+
+
     <script src="js/app.js"></script>
     <script type="module" src="js/card.js"></script>
     <script type="module" src="js/funcionalidades-nav-footer.js"></script>
