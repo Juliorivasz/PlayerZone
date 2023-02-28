@@ -30,6 +30,7 @@ body{
 
 .div-izquierdo{
     display: flex;
+    align-items: center;
 }
 
 .div-derecho{
@@ -48,6 +49,11 @@ body{
 .logo:hover{
     transform: scale(1.2);
 }    
+
+.links_nav{
+    text-decoration: none;
+    color: inherit;
+}
 
 .btn-menu{
     font-size: 16px;
