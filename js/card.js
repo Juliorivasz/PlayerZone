@@ -2,7 +2,8 @@
 // que quiera tener en el card
 const products = document.querySelector('.products');
 
-function card(section,title, imagen, stock, price, financing) {
+
+function card(section,title, imagen, stock, price, financing) { 
     const div = document.createElement('div');
     div.classList.add('container__card');
     div.innerHTML = `
@@ -21,18 +22,27 @@ function card(section,title, imagen, stock, price, financing) {
                     Hasta en 12 cuotas de <span class="price__card" >$ ${Math.round(financing/12)}.000</span>
                     Sin interés del precio de lista
                 </p>
-                <button class="btn__products" type="button">
+                <button class="btn__products" type="button" onclick="agregarAlCarrito()" >
                 <img class="logos-nav" src="img/logo carrito.png" alt="carrito">
                 <p class="text__btn" >agregar</p>
                 </button>
             </div>`;
+
     section.appendChild(div);
+    return div;
 };
 
-card(products,'i5 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '150.000', '280.000');
-card(products,'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '320.000', '400.000');
+// Boton de agregar al carrito
+const btn = document.querySelector('.btn__products');
+console.log(btn)
+
+
+card(products,'i5 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
+card(products,'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
 card(products,'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
-card(products,'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '180.000', '320.000');
+card(products,'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
+
+ 
 
 
 export default card;

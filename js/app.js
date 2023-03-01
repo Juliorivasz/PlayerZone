@@ -101,4 +101,4 @@ const desplazarImagen = ()=>{
         point[1].classList.add('active');             
     }
 }
- 
+
