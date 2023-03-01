@@ -4,7 +4,8 @@
 Descripcion del Proyecto:
 Player Zone es un ecommerce (Tienda Virtual) sobre pc armadas, notebooks, componentes para pc y notebooks.
 Facilita el proceso de compra, ya que no es necesario ir fisicamente a la tienda, la pagina posee
-los productos, los metodos de pago, el precio, informacion detallada de los productos, descuentos, ofertas, promociones e informacion de la tienda y
+los productos, los metodos de pago, el precio, informacion detallada de los productos, descuentos,
+ofertas, promociones e informacion de la tienda y
 todo el proceso de compra e informacion del usuario esta 100% protegida y segura.
 ~~~
 

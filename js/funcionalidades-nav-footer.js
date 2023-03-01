@@ -33,8 +33,13 @@ button.addEventListener('click', () => {
         input.style.display = 'flex'  
         div_barra_busqueda.style = 'position: absolute; justify-content: center'
         imagenLupa.src = "img/logo x.png";
-        sub_menu.style.display = 'none';
-        casilla_usuario.style.display = 'none';
+        if(window.innerWidth > 990) {
+            return; // Si el ancho es mayor a 990px no hace nada
+        }
+        else {
+            casilla_usuario.style.display = 'none';
+            sub_menu.style.display = 'none';
+        };
         
         
     }
@@ -75,7 +80,12 @@ const casilla_usuario = document.querySelector('.casilla-usuario');
 const cerrar_x_usuario = document.querySelector('.logo_x_usuario')
 
 button_usuario.addEventListener('click', () => {
-    if(getComputedStyle(casilla_usuario).display === 'flex'){
+
+    if(window.innerWidth > 990) {
+    return; // Si el ancho es mayor a 990px no hace nada
+    }
+
+    else if(getComputedStyle(casilla_usuario).display === 'flex'){
         casilla_usuario.style.display = 'none'; 
         
         

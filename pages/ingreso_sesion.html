@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>iniciar sesión</title>
+</head>
+<body>
+    <header class="header">
+        <div class="div-izquierdo">
+            <div class="div-logo">
+                <a class="links_nav" href="/index.html"><img class="logo" src="/img/logo zona player.png"></a>
+            </div>
+        <!-- este seria el menu desplegable -->
+            <div class="menu">
+                <button class="btn-menu-responsive"  ><img class="logo-menu" src="/img/logo menu.png" alt=""></button>
+                <button class="btn-menu"><a class="links_nav" href="/pages/componentes.html">TODAS LAS CATEGORIAS</a></button>
+                <ul class="sub-menu">
+                    <li><a class="links_nav" href="/pages/componentes.html">COMPONENTES</a></li>
+                    <li><a class="links_nav" href="/pages/pc_armadas.html">PC ARMADAS</a></li>
+                    <li><a class="links_nav" href="/pages/perifericos.html">PERIFERICOS</a></li>
+                    <li><a class="links_nav" href="/pages/notebooks.html">NOTEBOOKS</a></li>
+                    <img class="logo_x" src="/img/logo x.png" alt="">            
+                </ul>                          
+            </div>
+        </div>
+
+        <!--  esta seria la barra de busqueda -->
+        <div class="div-barra-busqueda">
+                <form class="container-barra-busqueda">
+                    <input class="barra-busqueda" id="id-barra-busqueda" placeholder="¿Que producto buscas?" type="text">
+                </form>
+                <img id="logo_barra_busqueda" class="logos-nav-lupa" src="/img/logo lupa.png" alt="">
+                 
+    
+        </div>       
+
+        <div class="div-derecho">
+            <img src="/img/logo user.png" alt="" class="logo-user">
+            <!-- este seria el boton del carrito -->
+            <div class="casilla-usuario">
+                <a href="/pages/contacto.html" class="container-button"><button>Contacto</button></a>
+                <a href="/pages/ingreso_sesion.html" class="container-button"><button>Ingresar</button></a>
+                <a href="/pages/registro_sesion.html" class="container-button"><button>Registrarse</button></a>                
+                <a href="/pages/carrito.html" class="btn"><button id="logos-nav"><img class="logos-nav" src="/img/logo carrito.png" alt=""></button></a> 
+                <img class="logo_x_usuario" src="/img/logo x.png" alt=""> 
+            </div>
+        </div>
+    </header>
+    <main>
+        <img class="pagina_construccion" src="/img/pagina-construccion.jpg" alt="pagina en construccion">
+    </main>
+    
+    <!-- seccion dedicada al footer -->
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-links">
+              <ul>
+                <li class="li_inicio">Inicio</li>
+                <li><a href="/pages/productos.html">Productos</a></li>
+                <li><a href="/pages/servicios.html">Servicios</a></li>
+                <li><a href="/pages/contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li><a target="_blank" href="https://www.facebook.com/" href="#"><img class="logos-redes-sociales" src="/img/logo facebook.png" alt=""><i class="fab fa-facebook"></i></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/" href="#"><img class="logos-redes-sociales" src="/img/logo instagram.png" alt=""><i class="instagram"></i></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/"><img class="logos-redes-sociales" src="/img/logo youtube.png" alt=""><i class="youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-copy">
+            <p>&copy; 2023 Todos los derechos reservados.</p>
+          </div>
+    </footer>
+
+
+    <script src="/js/app.js"></script>
+    <script type="module" src="/js/card.js"></script>
+    <script type="module" src="/js/funcionalidades-nav-footer.js"></script>
+</body>
+</html>
