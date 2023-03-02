@@ -3,6 +3,9 @@ const arrow = document.querySelectorAll('.arrow')
 const listArrow = document.querySelectorAll('.no-activo')
 const listArrowAqua = document.querySelectorAll('.activo')
 const point = document.querySelectorAll('.point')
+const countCart = document.querySelector('.counter_cart');
+
+countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('count') : 0;
 
 // cuando hago click en un punto
     // Saber la posicion de ese punto

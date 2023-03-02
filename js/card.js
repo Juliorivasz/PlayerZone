@@ -32,10 +32,6 @@ function card(section,title, imagen, stock, price, financing) {
     return div;
 };
 
-// Boton de agregar al carrito
-const btn = document.querySelector('.btn__products');
-console.log(btn)
-
 
 card(products,'i5 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
 card(products,'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');

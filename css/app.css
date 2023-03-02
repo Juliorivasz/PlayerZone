@@ -209,6 +209,21 @@ body{
     display: none;
 }
 
+.counter_cart {
+    display: flex;
+    position: absolute;
+    top: 42px;
+    right: 10%;
+    font-weight: bold;
+    background-color: white;
+    width: 23px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 23px;
+    border-radius: 100%;
+}
+
 /*  NAV RESPONSIVE  */
 
 @media screen and (max-width: 990px) {
@@ -385,6 +400,9 @@ body{
         margin-left: 90%;
     }
     
+    .counter_cart {
+        display: none;
+    }
 
 }
 
