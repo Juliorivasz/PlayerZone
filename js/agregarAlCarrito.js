@@ -1,3 +1,4 @@
+// se inicializa la variable que contiene el valor del local-storage
 let saveStorage = parseInt(localStorage.getItem('count'));
 let count = localStorage.getItem('count') ? saveStorage + 1 : 1;
 
