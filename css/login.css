@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 10% 0;
+    height: 100vh;
 }
 
 
@@ -45,6 +46,27 @@ section form label {
     border-bottom: 2px solid black;
 }
 
+.hidden {
+    display: none;
+}
+
+.message__error {
+    color: red;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.eye {
+    position: absolute;
+    width: 32px;
+    top: 60.5%;
+    right: 39%;
+}
+
+.eye:hover {
+    cursor: pointer;
+}
+
 .btn__login {
     width: 100%;
     border-radius: 5px;
@@ -77,5 +99,9 @@ section form label {
 @media screen and (max-width: 550px){
     .section__login {
         padding: 25% 0 12% 0;
+    }
+
+    .container__login {
+        border-radius: 0;
     }
 }
