@@ -53,9 +53,140 @@
         <div class="counter_cart">0</div>
     </header>
     <main>
-        <img class="pagina_construccion" src="/img/pagina-construccion.jpg" alt="pagina en construccion">
+        <section class="section__cart">
+            <div class="container__btn__add__more__products">
+                <button class="add__more__products">agregar mas productos</button>
+            </div>
+            <div class="container__state__cart">
+                <div class="state__cart">
+                    <img class="method__cart" src="" alt="">
+                    <p class="text__cart">carrito/forma de entrega</p>
+                </div>
+                <div class="state__cart">
+                    <img class="method__cart" src="" alt="">
+                    <p class="text__cart">formas de pago</p>
+                </div>
+                <div class="state__cart">
+                    <img class="method__card" src="" alt="">
+                    <p class="text__cart">confirmacion de la compra</p>
+                </div>
+            </div>
+
+            <div class="container__list__products__cart">
+                <div class="container__title__list__products__cart">
+                    <h3 class="title__list__products__cart">detalle de la compra</h3>
+                </div>
+                <div class="container__list__products">
+                    <div class="text__header__list__products">
+                        <p class="text__header">Producto</p>
+                        <p class="text__header">producto</p>
+                        <p class="text__header">precio</p>
+                        <p class="text__header">cant</p>
+                        <p class="text__header">subtotal</p>
+                    </div>
+                    <div class="list__products">
+                        <!-- van todos los productos agregados -->
+                    </div>
+                </div>
+                <div class="more__options">
+                    <div class="more__products">
+                        <img class="arrow__left" src="" alt="">
+                        <p class="text__more__products">agregar mas productos</p>
+                    </div>
+
+                    <div class="container__price__total">
+                        <p class="text__price__total">total:</p>
+                        <span class="price__total"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container__method__delivery">
+                <div class="container__title__method__delivery">
+                    <h3 class="title__method__delivery">forma de entrega</h3>
+                </div>
+
+                <div class="container__table__method__delivery">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>forma de entrega</td>
+                                <td>precio</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>
+                                    <p>retiro gratis en sucursal</p>
+                                    <p>Podrás retirar tus artículos en cualquiera de nuestras 3 sucursales</p>
+                                </td>
+                                <td>
+                                    <span>$</span>
+                                    <span>price</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>
+                                    <p>envio en todo el pais</p>
+                                    <p>Tiempos de entrega: El tiempo para retiro o envío de las Pc depende de la 
+                                        cantidad de armados que tengamos en el momento, una vez realizada la compra 
+                                        se le informara el día de la entrega con exactitud. En caso de pago por transferencia o 
+                                        depósito bancario, el tiempo corre luego de la acreditación del mismo</p>
+                                </td>
+                                <td>
+                                    <span>$</span>
+                                    <span>price</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio"></td>
+                                <td>
+                                    <p>envio gratis en en caba</p>
+                                    <p>Compra mínima $30.000 pesos</p>
+                                </td>
+                                <td>
+                                    <span>$</span>
+                                    <span>price</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="container__shopping__summary">
+                <div class="container__title__shopping__summary">
+                    <h3 class="title__shopping__summary">resumen de compra</h3>
+                </div>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Subtotal:</td>
+                            <td>precio</td>
+                            <td>
+                                <input type="radio">
+                                <p>aceptar terminos</p>
+                                <br>
+                                <button>iniciar pago</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>costo del envio</td>
+                            <td>precio</td>
+                        </tr>
+                        <tr>
+                            <td>total a pagar:</td>
+                            <td>precio</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
-    
     <!-- seccion dedicada al footer -->
     <footer>
         <div class="footer-container">
@@ -77,11 +208,9 @@
             </div>
           </div>
           <div class="footer-copy">
-            <p>&copy; 2023 Todos los derechos reservados.</p>
-          </div>
+              <p>&copy; 2023 Todos los derechos reservados.</p>
+        </div>
     </footer>
-
-
     <script src="/js/app.js"></script>
     <script type="module" src="/js/funcionalidades-nav-footer.js"></script>
 </body>
