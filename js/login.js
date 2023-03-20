@@ -1,4 +1,8 @@
+import './Firebase/firebase.js';
+
 const formulario = document.querySelector('.form__login');
+const inputPassword = document.querySelector("#password");
+const eye = document.querySelectorAll(".eye");
 
 formulario.addEventListener('submit', (event)=>{
     event.preventDefault();
@@ -27,8 +31,7 @@ formulario.addEventListener('submit', (event)=>{
     }
 })
 
-const inputPassword = document.querySelector("#password");
-const eye = document.querySelectorAll(".eye");
+
 
 // mostrar u ocultar contraseña 
 eye.forEach((e) => {
@@ -44,3 +47,7 @@ eye.forEach((e) => {
         }
 })
 })
+
+
+
+
