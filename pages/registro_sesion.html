@@ -7,7 +7,7 @@
     <link rel="icon" href="../favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/register.css">;
+    <link rel="stylesheet" href="/css/register.css">
     <title>PlayerZone</title>
 </head>
 <body>
@@ -56,22 +56,32 @@
                 <div class="container__register">
                     <h1 class="title__register">Registrarse</h1>
                     <form class="form__register">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                        <div class="container__input__register">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre" class="input__register" placeholder="Nombre" required>
+                        </div>
                         
-                        <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                        <div class="container__input__register">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" name="apellido" id="apellido" class="input__register" placeholder="Apellido" required>
+                        </div>
 
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <div class="container__input__register">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" class="input__register" placeholder="Email" required>
+                        </div>
 
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" name="telefono" id="telefono" placeholder="telefono" required>
+                        <div class="container__input__register">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" name="telefono" id="telefono" class="input__register" placeholder="telefono" required>
+                        </div>
 
-                        <label for="direccion">Dirección:</label>
-                        <input type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                        <div class="container__input__register">
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" name="direccion" id="direccion" class="input__register" placeholder="Dirección" required>
+                        </div>
                         
-                        <button type="submit">Registrar</button>
+                        <button type="submit" class="btn__register">Registrar</button>
                     </form>
                 </div>
             </section>

@@ -506,6 +506,7 @@ body{
     margin: 2rem 0;
     overflow: hidden;
     padding: 1rem 0;
+    text-transform: uppercase;
 }
 
 .ul__type__products {
