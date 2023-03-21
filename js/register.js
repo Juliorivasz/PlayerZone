@@ -24,7 +24,7 @@ formRegister.addEventListener('submit', (e)=> {
     const inputNombre = formRegister['nombre'];
     const inputUsuario = formRegister['usuario'];
     const inputEmail = formRegister['email'];
-    const inputPassword = formRegister['contraseña'];
+    const inputPassword = formRegister['password'];
     const inputTelefono = formRegister['telefono'];
     const inputDireccion = formRegister['direccion'];
 
