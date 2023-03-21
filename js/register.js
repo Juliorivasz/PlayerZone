@@ -40,5 +40,7 @@ formRegister.addEventListener('submit', (e)=> {
 
     verifyUsers(infoData);
 
+    alert('Registrado con Exito');
+
     formRegister.reset();
 })
