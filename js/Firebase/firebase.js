@@ -19,8 +19,8 @@ export const app = initializeApp(firebase);
 const db = getFirestore(app);
 
 // almacenar datos a una collecion llamada RegisterUsers
-export const saveData = (nombre, apellido, email, telefono, direccion)=> {
-    addDoc(collection(db, 'RegisterUsers'), {nombre,apellido,email,telefono,direccion});
+export const saveData = (nombre, usuario, email, password, telefono, direccion)=> {
+    addDoc(collection(db, 'RegisterUsers'), { nombre, usuario, email, password, telefono, direccion });
 }
 
 export const verifyUsers = async ( data )=> {
