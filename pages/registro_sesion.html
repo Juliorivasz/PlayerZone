@@ -76,7 +76,7 @@
                         
                         <label for="password">Contraseña:</label>
                         <div class="container__password__eye">
-                            <input type="password" id="password" class="input__register" name="password" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$" title="6 a 12 caracteres, almenos una letra mayuscula, minuscula, un numero y no puede contener caracteres especiales" required>
+                            <input type="password" id="password" class="input__register" name="password" placeholder="Contraseña" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,}$" title="min 6 caracteres, almenos una letra mayuscula, minuscula, un numero y no puede contener caracteres especiales" required>
                             <p class="message__error hidden">contraseña incorrecta</p>
                             <img src="../img/eye-hide.svg" class="eye" alt="hidden-password">
                             <img src="../img/eye.svg" class="eye hidden" alt="view-password">

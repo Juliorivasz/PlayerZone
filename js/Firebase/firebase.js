@@ -56,8 +56,10 @@ export const verifyUsers = async ( data )=> {
     return permitted;
 }
 
+// validar inicio de sesion
 export const authUsers = async ( user )=> {
     const getUserRegister = await getDocs(collection(db, 'RegisterUsers'));
+    let error;
     let validado;
     let nombre;
     const { usuario , contrasena } = user;
@@ -65,30 +67,33 @@ export const authUsers = async ( user )=> {
     getUserRegister.forEach( (doc) => {
         const docDataUser = doc.data();
 
+
         if(docDataUser.usuario === usuario && docDataUser.password === contrasena) {
+            console.log(docDataUser.usuario, docDataUser.password)
             nombre = docDataUser.nombre;
             return validado = 'login';
         }else if(docDataUser.usuario === usuario && docDataUser.password !== contrasena) {
-            return validado = 'Contraseña incorrecta';
+            return error = 'Contraseña incorrecta';
         }else if(docDataUser.usuario !== usuario && docDataUser.password === contrasena) {
-            return validado = 'Usuario incorrecto';
+            return error = 'Usuario incorrecto';
         }else {
-            return validado = 'Credenciales incorrectas';
+            console.log('error')
+            return error = 'Credenciales incorrectas';
         }
     })
-
+    console.log(validado)
     if(validado === 'login') {
         alertAuth('Bienvenido ' + nombre);
             setTimeout(()=> {
                 window.location.href = "../index.html";
 
             }, 1000)
-    }else if(validado === 'Contraseña incorrecta') {
-        return alertAuth(validado, 'invalido');
-    }else if(validado === 'Usuario incorrecto') {
-        return alertAuth(validado, 'invalido');
+    }else if(error === 'Contraseña incorrecta') {
+        return alertAuth(error, 'invalido');
+    }else if(error === 'Usuario incorrecto') {
+        return alertAuth(error, 'invalido');
     }else {
-        return alertAuth(validado, 'invalido');
+        return alertAuth(error, 'invalido');
     }
 
 }

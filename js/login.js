@@ -3,7 +3,7 @@ import { auth, authUsers } from './Firebase/firebase.js';
 
 const formulario = document.querySelector('.form__login');
 
-formulario.addEventListener('submit', async (event)=>{
+formulario.addEventListener('submit', (event)=>{
     event.preventDefault();
     // usuario y contraseña
     const username = document.querySelector('#username');
@@ -21,7 +21,7 @@ formulario.addEventListener('submit', async (event)=>{
 
     // autenticado el inicio de sesion con la base de datos
     authUsers(loginData);
-
+    
 
 })
 
