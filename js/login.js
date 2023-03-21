@@ -1,10 +1,9 @@
-import './Firebase/firebase.js';
 import './mostrarContraseña.js';
+import { auth, authUsers } from './Firebase/firebase.js';
 
 const formulario = document.querySelector('.form__login');
 
-
-formulario.addEventListener('submit', (event)=>{
+formulario.addEventListener('submit', async (event)=>{
     event.preventDefault();
     // usuario y contraseña
     const username = document.querySelector('#username');
@@ -18,24 +17,12 @@ formulario.addEventListener('submit', (event)=>{
         contrasena: password.value
     }
 
-    // validacion de usuario y contraseña
-    if(username.toLowerCase() === "admin" && password === "Admin123") {
-        window.location.href = "../index.html";
-    }else if(password !== "Admin123" && username === "admin"){
-        let valorCampo = username;
-        event.target.reset();
-        messageError[0].classList.add('hidden');
-        messageError[1].classList.remove('hidden');
-        console.log(messageError);
-        document.querySelector('#username').value = valorCampo;
-    }else if(username !== "admin" && password === "Admin123"){
-        event.target.reset();
-        messageError[1].classList.add('hidden');
-        messageError[0].classList.remove('hidden');
-    }else {
-        event.target.reset();
-        messageError.forEach(e => e.classList = "message__error");
-    }
+    const {usuario, contrasena} = loginData;
+
+    // autenticado el inicio de sesion con la base de datos
+    authUsers(loginData);
+
+
 })
 
 

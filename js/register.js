@@ -2,8 +2,6 @@ import './Firebase/firebase.js';
 import './mostrarContraseña.js';
 import { verifyUsers } from './Firebase/firebase.js';
 
-const inputs = document.querySelectorAll('.input__register');
-const btnRegister = document.querySelector('.btn__register');
 const formRegister = document.querySelector('.form__register');
 const telefonoInput = document.getElementById('telefono');
 
@@ -38,6 +36,7 @@ formRegister.addEventListener('submit', async (e)=> {
         direccion: inputDireccion.value
     }
 
+    // verifyUsers verifica que el usuario no exista en la base de datos
     const validityUsers = await verifyUsers(infoData);
     
     if(validityUsers) {
