@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-// import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
-import {  } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+// import {  } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebase = {
@@ -13,8 +13,34 @@ const firebase = {
     measurementId: "G-CLTQZ8J0JZ"
 };
 
-// Initialize Firebase
-// const db = getFirestore();
+
 export const app = initializeApp(firebase);
 
-console.log('corriendo firebase.js')
+const db = getFirestore(app);
+
+// almacenar datos a una collecion llamada RegisterUsers
+export const saveData = (nombre, apellido, email, telefono, direccion)=> {
+    addDoc(collection(db, 'RegisterUsers'), {nombre,apellido,email,telefono,direccion});
+}
+
+export const verifyUsers = async ( data )=> {
+    const readData = await getDocs(collection(db, 'RegisterUsers'));
+    const {nombre, usuario, email, password, telefono, direccion} = data;
+    let permitted = true;
+    readData.forEach((doc) => {
+        const docData = doc.data();
+        // validacion de si existe o no el dato pasado al input en la base de datos
+        if(docData.usuario === usuario) {
+            permitted = false;
+            alert('Este Nombre de Usuario ya esta Existe');
+        }else if(docData.email === email) {
+            permitted = false;
+            alert('Este correo ya esta registrado');
+        }else if(docData.telefono === telefono) {
+            permitted = false;
+            alert('Este telefono ya esta registrado');
+        }
+    });
+    
+    permitted ? saveData(nombre, usuario, email, password, telefono, direccion) : '';
+}

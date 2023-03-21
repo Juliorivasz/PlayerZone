@@ -1,15 +1,22 @@
 import './Firebase/firebase.js';
+import './mostrarContraseña.js';
 
 const formulario = document.querySelector('.form__login');
-const inputPassword = document.querySelector("#password");
-const eye = document.querySelectorAll(".eye");
+
 
 formulario.addEventListener('submit', (event)=>{
     event.preventDefault();
     // usuario y contraseña
-    const username = document.querySelector('#username').value;
-    const password = document.querySelector('#password').value;
+    const username = document.querySelector('#username');
+    const password = document.querySelector('#password');
     const messageError = document.querySelectorAll('.message__error');
+
+    // objeto con los valores del input para logearse
+
+    const loginData = {
+        usuario: username.value,
+        contrasena: password.value
+    }
 
     // validacion de usuario y contraseña
     if(username.toLowerCase() === "admin" && password === "Admin123") {
@@ -33,20 +40,7 @@ formulario.addEventListener('submit', (event)=>{
 
 
 
-// mostrar u ocultar contraseña 
-eye.forEach((e) => {
-    e.addEventListener('click', ()=> {
-        if(eye[0].classList.value === "eye"){
-            eye[1].classList.remove('hidden');
-            eye[0].classList.add('hidden');
-            inputPassword.type = 'text';
-        }else if(eye[1].classList.value === "eye"){
-            eye[0].classList.remove('hidden');
-            e.classList.add('hidden');
-            inputPassword.type = 'password';
-        }
-})
-})
+
 
 
 

@@ -64,6 +64,7 @@ section form label {
 .eye {
     position: absolute;
     width: 32px;
+    margin-right: .3rem;
 }
 
 .eye:hover {
