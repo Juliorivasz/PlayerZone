@@ -129,6 +129,23 @@ body{
 
 .container-button{
     padding: 6px;
+    width: max-content;
+}
+
+.ingresar {
+
+}
+
+.registrarse {
+
+}
+
+.cerrar__sesion {
+    
+}
+
+.isLogged {
+    display: none;
 }
 
 .header a button {
