@@ -20,7 +20,7 @@ const db = getFirestore(app);
 
 // almacenar datos a una collecion llamada RegisterUsers
 export const saveData = (nombre, usuario, email, password, telefono, direccion)=> {
-    addDoc(collection(db, 'RegisterUsers'), { nombre, usuario, email, password, telefono, direccion });
+    addDoc(collection(db, 'RegisterUsers'), {nombre, usuario, email, password, telefono, direccion });
 }
 
 export const verifyUsers = async ( data )=> {
@@ -32,7 +32,7 @@ export const verifyUsers = async ( data )=> {
         // validacion de si existe o no el dato pasado al input en la base de datos
         if(docData.usuario === usuario) {
             permitted = false;
-            alert('Este Nombre de Usuario ya esta Existe');
+            alert('Este Nombre de Usuario ya Existe');
         }else if(docData.email === email) {
             permitted = false;
             alert('Este correo ya esta registrado');
@@ -42,5 +42,9 @@ export const verifyUsers = async ( data )=> {
         }
     });
     
-    permitted ? saveData(nombre, usuario, email, password, telefono, direccion) : '';
+    if(permitted) {
+        alert('Registrado con Exito');
+        saveData(nombre, usuario, email, password, telefono, direccion);
+    }
+    return permitted;
 }

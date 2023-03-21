@@ -18,7 +18,7 @@ const telefonoInput = document.getElementById('telefono');
     }
   });
 
-formRegister.addEventListener('submit', (e)=> {
+formRegister.addEventListener('submit', async (e)=> {
     e.preventDefault();
 
     const inputNombre = formRegister['nombre'];
@@ -38,9 +38,10 @@ formRegister.addEventListener('submit', (e)=> {
         direccion: inputDireccion.value
     }
 
-    verifyUsers(infoData);
+    const validityUsers = await verifyUsers(infoData);
+    
+    if(validityUsers) {
+      formRegister.reset();
+    }
 
-    alert('Registrado con Exito');
-
-    formRegister.reset();
 })
