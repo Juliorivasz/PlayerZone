@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from "../alertAuth.js";
+import {loginCheck} from '../logincheck.js';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // configuracion de firebase
@@ -57,43 +58,55 @@ export const verifyUsers = async ( data )=> {
 }
 
 // validar inicio de sesion
-export const authUsers = async ( user )=> {
-    const getUserRegister = await getDocs(collection(db, 'RegisterUsers'));
-    let error;
-    let validado;
-    let nombre;
-    const { usuario , contrasena } = user;
+// export const authUsers = async ( user )=> {
+//     const getUserRegister = await getDocs(collection(db, 'RegisterUsers'));
+//     let error;
+//     let validado;
+//     let nombre;
+//     let authUsuario;
+//     let authPassword;
+//     const { usuario , contrasena } = user;
 
-    getUserRegister.forEach( (doc) => {
-        const docDataUser = doc.data();
+//     getUserRegister.forEach( (doc) => {
+//         const docDataUser = doc.data();
 
+//         if(docDataUser.usuario === usuario && docDataUser.password === contrasena) {
+//             authUsuario = docDataUser.usuario;
+//             authPassword = docDataUser.password;
+//             nombre = docDataUser.nombre;
+//             return validado = 'login';
+//         }else if(docDataUser.usuario === usuario && docDataUser.password !== contrasena) {
+//             return error = 'Contraseña incorrecta';
+//         }else if(docDataUser.usuario !== usuario && docDataUser.password === contrasena) {
+//             return error = 'Usuario incorrecto';
+//         }else {
+//             console.log('error')
+//             return error = 'Credenciales incorrectas';
+//         }
 
-        if(docDataUser.usuario === usuario && docDataUser.password === contrasena) {
-            console.log(docDataUser.usuario, docDataUser.password)
-            nombre = docDataUser.nombre;
-            return validado = 'login';
-        }else if(docDataUser.usuario === usuario && docDataUser.password !== contrasena) {
-            return error = 'Contraseña incorrecta';
-        }else if(docDataUser.usuario !== usuario && docDataUser.password === contrasena) {
-            return error = 'Usuario incorrecto';
-        }else {
-            console.log('error')
-            return error = 'Credenciales incorrectas';
-        }
-    })
-    console.log(validado)
-    if(validado === 'login') {
-        alertAuth('Bienvenido ' + nombre);
-            setTimeout(()=> {
-                window.location.href = "../index.html";
+//     })
 
-            }, 1000)
-    }else if(error === 'Contraseña incorrecta') {
-        return alertAuth(error, 'invalido');
-    }else if(error === 'Usuario incorrecto') {
-        return alertAuth(error, 'invalido');
-    }else {
-        return alertAuth(error, 'invalido');
+//     if(validado === 'login') {
+//         alertAuth('Bienvenido ' + nombre);
+//             setTimeout(()=> {
+//                 window.location.href = "../index.html";
+//             }, 1000)
+//     }else if(error === 'Contraseña incorrecta') {
+//         return alertAuth(error, 'invalido');
+//     }else if(error === 'Usuario incorrecto') {
+//         return alertAuth(error, 'invalido');
+//     }else {
+//         return alertAuth(error, 'invalido');
+//     }
+// }
+
+// creando usuario nuevo
+export const nuevoUsuario = async ( usuario, password ) => {
+    try {
+        const userCredencial = await createUserWithEmailAndPassword(auth, usuario, password );
+        console.log(userCredencial);
+    } catch (error) {
+        console.error(error)
     }
 
 }

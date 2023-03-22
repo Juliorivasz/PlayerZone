@@ -1,3 +1,8 @@
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+import { auth } from "./Firebase/firebase.js";
+import { loginCheck } from "./logincheck.js";
+import './loggedIn.js';
+
 const big = document.querySelector('.big')
 const arrow = document.querySelectorAll('.arrow')
 const listArrow = document.querySelectorAll('.no-activo')
@@ -6,6 +11,12 @@ const point = document.querySelectorAll('.point')
 const countCart = document.querySelector('.counter_cart');
 
 countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('count') : 0;
+
+// escuchar el estado de login
+onAuthStateChanged(auth, async (user)=>{
+    loginCheck(user);
+})
+
 
 // cuando hago click en un punto
     // Saber la posicion de ese punto

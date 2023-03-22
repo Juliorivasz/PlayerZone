@@ -1,6 +1,6 @@
 import './Firebase/firebase.js';
 import './mostrarContraseña.js';
-import { verifyUsers } from './Firebase/firebase.js';
+import { nuevoUsuario, verifyUsers } from './Firebase/firebase.js';
 
 const formRegister = document.querySelector('.form__register');
 const telefonoInput = document.getElementById('telefono');
@@ -40,7 +40,9 @@ formRegister.addEventListener('submit', async (e)=> {
     const validityUsers = await verifyUsers(infoData);
     
     if(validityUsers) {
+      const authNewUser = await nuevoUsuario(infoData.email, infoData.password);
       formRegister.reset();
+      window.location.href = '../index.html';
     }
 
 })
