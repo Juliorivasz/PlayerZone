@@ -104,9 +104,8 @@ export const verifyUsers = async ( data )=> {
 export const nuevoUsuario = async ( usuario, password ) => {
     try {
         const userCredencial = await createUserWithEmailAndPassword(auth, usuario, password );
-        console.log(userCredencial);
     } catch (error) {
-        console.error(error)
+        console.error(error);
     }
 
 }

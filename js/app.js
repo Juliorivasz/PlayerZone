@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { auth } from "./Firebase/firebase.js";
 import { loginCheck } from "./logincheck.js";
-import './loggedIn.js';
+import './loggedOut.js';
 
 const big = document.querySelector('.big')
 const arrow = document.querySelectorAll('.arrow')
@@ -12,9 +12,11 @@ const countCart = document.querySelector('.counter_cart');
 
 countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('count') : 0;
 
+
 // escuchar el estado de login
 onAuthStateChanged(auth, async (user)=>{
-    loginCheck(user);
+    // hace la modificacion estilizada para el login
+    loginCheck(user);   
 })
 
 

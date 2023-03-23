@@ -2,6 +2,7 @@ import './mostrarContraseña.js';
 import { auth } from './Firebase/firebase.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from './alertAuth.js';
+import './googleLogin.js';
 
 
 const formulario = document.querySelector('.form__login');
@@ -40,9 +41,8 @@ formulario.addEventListener('submit', async (event)=>{
         }else if(error.code === 'auth/user-not-found'){
             alertAuth('usuario no existe', 'invalido');
         }else {
-            console.log('error')
+            alertAuth('error', 'invalido')
         }
-        console.log(error.code);
     }
 
 })
