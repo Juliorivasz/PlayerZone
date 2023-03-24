@@ -16,7 +16,7 @@ countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('co
 // escuchar el estado de login
 onAuthStateChanged(auth, async (user)=>{
     // hace la modificacion estilizada para el login
-    loginCheck(user);   
+    loginCheck(user);
 })
 
 

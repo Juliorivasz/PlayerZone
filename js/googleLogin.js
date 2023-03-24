@@ -2,9 +2,9 @@ import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/fir
 import { auth } from "./Firebase/firebase.js";
 import { alertAuth } from "./alertAuth.js";
 
-const redSocialBtn = document.querySelector('.redSocial');
+const btnGoogle = document.querySelector('#google');
 
-redSocialBtn.addEventListener('click', async ()=> {
+btnGoogle.addEventListener('click', async ()=> {
     const googleProvider = new GoogleAuthProvider();
 
     try {

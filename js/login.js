@@ -3,6 +3,7 @@ import { auth } from './Firebase/firebase.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from './alertAuth.js';
 import './googleLogin.js';
+import './facebookLogin.js';
 
 
 const formulario = document.querySelector('.form__login');
