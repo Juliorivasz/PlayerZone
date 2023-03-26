@@ -101,9 +101,10 @@ export const verifyUsers = async ( data )=> {
 // }
 
 // creando usuario nuevo
-export const nuevoUsuario = async ( usuario, password ) => {
+export const nuevoUsuario = async ( email, password ) => {
     try {
-        const userCredencial = await createUserWithEmailAndPassword(auth, usuario, password );
+        const userCredencial = await createUserWithEmailAndPassword(auth, email, password );
+        // window.location.href = '../../index.html';
     } catch (error) {
         console.error(error);
     }

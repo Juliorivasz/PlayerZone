@@ -7,7 +7,9 @@ const logoUser = document.querySelector('.logo-user');
 export const loginCheck = (user)=> {
     
     if(user) {
-        logoUser.src = user.photoURL;
+        if(user.photoURL) {
+            logoUser.src = user.photoURL;
+        }
         ingresar.classList.add('isLogged')
         registrar.classList.add('isLogged')
         cerrar__sesion.classList.remove('isLogged')

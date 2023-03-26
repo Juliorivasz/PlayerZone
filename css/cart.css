@@ -1,0 +1,27 @@
+.section__cart {
+    display: flex;
+    padding: 8.3rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container__btn__add__more__products {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    width: auto;
+}
+
+.btn__add__more__products {
+    border: none;
+    padding: .8rem;
+    font-size: 1.1rem;
+}
+
+.container__state__cart {
+    display: flex;
+    margin: 1rem 0;
+    width: 100%;
+    justify-content: space-around;
+}
