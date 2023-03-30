@@ -61,15 +61,15 @@
             </div>
             <div class="container__state__cart">
                 <div class="state__cart">
-                    <img class="method__cart" src="" alt="">
+                    <img class="method__cart" src="../img/shipping-fast-solid.svg" alt="shipping">
                     <p class="text__cart">carrito/forma de entrega</p>
                 </div>
                 <div class="state__cart">
-                    <img class="method__cart" src="" alt="">
+                    <img class="method__cart" src="../img/credit-card-solid.svg" alt="credit card">
                     <p class="text__cart">formas de pago</p>
                 </div>
                 <div class="state__cart">
-                    <img class="method__card" src="" alt="">
+                    <img class="method__cart" src="../img/bxs-check-shield.svg" alt="security">
                     <p class="text__cart">confirmacion de la compra</p>
                 </div>
             </div>
@@ -78,34 +78,58 @@
                 <div class="container__title__list__products__cart">
                     <h3 class="title__list__products__cart">detalle de la compra</h3>
                 </div>
-                <div class="container__list__products">
-                    <div class="text__header__list__products">
-                        <p class="text__header">Producto</p>
-                        <p class="text__header">producto</p>
-                        <p class="text__header">precio</p>
-                        <p class="text__header">cant</p>
-                        <p class="text__header">subtotal</p>
-                    </div>
-                    <div class="list__products">
+                <div class="container__products__and__more__options">
+                    <div class="container__list__products">
+                        <div class="text__header__list__products">
+                            <p class="text__header">Producto</p>
+                            <p class="text__header">producto</p>
+                            <p class="text__header">precio</p>
+                            <p class="text__header">cant</p>
+                            <p class="text__header">subtotal</p>
+                        </div>
+                    
                         <!-- van todos los productos agregados -->
+                        <div class="list__products">
+                            <li class="products__added">
+                                <img src="../img/monitor-predator-z.png" alt="monitor-predator-z" id="img__products__added">
+                                <p id="name__products__added">	
+                                    PC GAMER D INTEL CORE I3 10105 | 16GB RAM | SSD 240GB | RTX 3060 TI | 650W BRONZE</p>
+                                <span id="price__products__added">$ 180.000</span>
+                                <input type="number" id="input__products__added" >
+                                <div id="container__subtotal__delete__products__added">
+                                    <p>$ 200.000</p>
+                                    <img src="./img/papelera.svg" alt="papelera" id="img__delete__products__added">
+                                </div>
+                            </li>
+                            <li class="products__added">
+                                <img src="../img/monitor-predator-z.png" alt="monitor-predator-z" id="img__products__added">
+                                <p id="name__products__added">	
+                                    PC GAMER D INTEL CORE I3 10105 | 16GB RAM | SSD 240GB | RTX 3060 TI | 650W BRONZE</p>
+                                <span id="price__products__added">$ 180.000</span>
+                                <input type="number" id="input__products__added" >
+                                <div id="container__subtotal__delete__products__added">
+                                    <p>$ 200.000</p>
+                                    <img src="./img/papelera.svg" alt="papelera" id="img__delete__products__added">
+                                </div>
+                            </li>
+                        </div>
                     </div>
-                </div>
-                <div class="more__options">
-                    <div class="more__products">
-                        <img class="arrow__left" src="" alt="">
-                        <p class="text__more__products">agregar mas productos</p>
-                    </div>
-
-                    <div class="container__price__total">
-                        <p class="text__price__total">total:</p>
-                        <span class="price__total"></span>
+                    <div class="more__options">
+                        <button class="btn__add__products">
+                            <img class="arrow__left" src="../img/arrow-left.svg" alt="Agregar mas productos">
+                            <p class="text__more__products">agregar mas productos</p>
+                        </button>
+                        <div class="container__price__total">
+                            <p class="text__price__total">total:</p>
+                            <span class="price__total">$ 1000.000</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="container__method__delivery">
                 <div class="container__title__method__delivery">
-                    <h3 class="title__method__delivery">forma de entrega</h3>
+                    <h3 class="title__delivery">forma de entrega</h3>
                 </div>
 
                 <div class="container__table__method__delivery">
@@ -119,39 +143,36 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="radio"></td>
+                                <td><input type="radio" name="delivery" ></td>
                                 <td>
-                                    <p>retiro gratis en sucursal</p>
-                                    <p>Podrás retirar tus artículos en cualquiera de nuestras 3 sucursales</p>
+                                    <p class="title__method__delivery">Retiro ¡GRATIS! en Sucursal</p>
+                                    <p class="subtitle__method__delivery">Podrás retirar tus artículos en cualquiera de nuestras 3 sucursales</p>
                                 </td>
                                 <td>
-                                    <span>$</span>
-                                    <span>price</span>
+                                    <span>$0</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="radio"></td>
+                                <td><input type="radio" name="delivery"></td>
                                 <td>
-                                    <p>envio en todo el pais</p>
-                                    <p>Tiempos de entrega: El tiempo para retiro o envío de las Pc depende de la 
+                                    <p class="title__method__delivery">Envio en todo el pais</p>
+                                    <p class="subtitle__method__delivery">Tiempos de entrega: El tiempo para retiro o envío de las Pc depende de la 
                                         cantidad de armados que tengamos en el momento, una vez realizada la compra 
                                         se le informara el día de la entrega con exactitud. En caso de pago por transferencia o 
                                         depósito bancario, el tiempo corre luego de la acreditación del mismo</p>
                                 </td>
                                 <td>
-                                    <span>$</span>
-                                    <span>price</span>
+                                    <span style="width: 100%; height: 100%;">$1300</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="radio"></td>
+                                <td><input type="radio" name="delivery"></td>
                                 <td>
-                                    <p>envio gratis en en caba</p>
-                                    <p>Compra mínima $30.000 pesos</p>
+                                    <p class="title__method__delivery">Envio gratis en caba</p>
+                                    <p class="subtitle__method__delivery">Compra mínima $30.000 pesos</p>
                                 </td>
                                 <td>
-                                    <span>$</span>
-                                    <span>price</span>
+                                    <span>$0</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -164,16 +185,19 @@
                     <h3 class="title__shopping__summary">resumen de compra</h3>
                 </div>
 
-                <table>
+                <table id="table__summary">
                     <tbody>
                         <tr>
                             <td>Subtotal:</td>
                             <td>precio</td>
-                            <td>
-                                <input type="radio">
-                                <p>aceptar terminos</p>
-                                <br>
-                                <button>iniciar pago</button>
+                            <td rowspan="3">
+
+                                <div class="terminos">
+                                    <input type="checkbox" style="margin: 0 1rem;" >
+                                    <p>Aceptar terminos y condiciones</p>
+                                </div>
+                                
+                                <button class="btn__start__pay">iniciar pago</button>
                             </td>
                         </tr>
                         <tr>
