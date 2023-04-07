@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from "../alertAuth.js";
 import {loginCheck} from '../logincheck.js';
@@ -108,5 +108,35 @@ export const nuevoUsuario = async ( email, password ) => {
     } catch (error) {
         console.error(error);
     }
+}
 
+export const registerProducts = async (title, img, price, amount) => {
+    const products = await verifyProducts(title, img, price, amount);
+    if(products) {
+        addDoc(collection(db, 'Products'), {title, img, price, amount});
+    }
+    console.log(products)
+    // const d = doc(db, 'Products', 'jpBxyKiDQJnAlRwzUIzk');
+    // console.log(d)
+}
+
+export const verifyProducts = async ( title, img, price, amount )=> {
+    const readData = await getDocs(collection(db, 'Products'));
+    const document = readData.docs
+    let existe;
+    for(const docu of document) {
+        const docData = docu.data();
+        // validacion de si existe o no el dato pasado al input en la base de datos
+        if(docData.title === title) {
+            let amountTotal = docData.amount + 1;
+            const docUpdate = doc(db, 'Products', docu.id);
+            await updateDoc(docUpdate, { amount: amountTotal});
+            existe = false;
+        }
+    };
+    if(existe === undefined) {
+        return !existe;
+    }else {
+        return existe;
+    }
 }

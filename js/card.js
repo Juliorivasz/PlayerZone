@@ -1,9 +1,9 @@
 // funcion para crear el card pasandole por parametro la informacion
 // que quiera tener en el card
+import { agregarAlCarrito } from "./agregarAlCarrito.js";
 const products = document.querySelector('.products');
 
-
-function card(section,title, imagen, stock, price, financing) { 
+function card(section, id, title, imagen, stock, price, financing) { 
     const div = document.createElement('div');
     div.classList.add('container__card');
     div.innerHTML = `
@@ -22,21 +22,27 @@ function card(section,title, imagen, stock, price, financing) {
                     Hasta en 12 cuotas de <span class="price__card" >$ ${Math.round(financing/12)}.000</span>
                     Sin interés del precio de lista
                 </p>
-                <button class="btn__products" type="button" onclick="agregarAlCarrito()" >
+                <button class="btn__products" type="button" data-id="${id}">
                 <img class="logos-nav" src="img/logo carrito.png" alt="carrito">
                 <p class="text__btn" >agregar</p>
                 </button>
             </div>`;
 
     section.appendChild(div);
+
+    const btnsAgregarAlCarrito = document.querySelectorAll('.btn__products');
+    btnsAgregarAlCarrito.forEach((btnAgregarAlCarrito)=> {
+        const idCard = btnAgregarAlCarrito.getAttribute('data-id');
+        btnAgregarAlCarrito.onclick = () => agregarAlCarrito(idCard);
+    })
     return div;
 };
 
 
-card(products,'i5 12600 Procesador', './img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
-card(products,'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
-card(products,'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
-card(products,'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
+card(products, '0', 'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
+card(products, '1', 'i5 12600 Procesador', '/img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
+card(products, '2', 'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
+card(products, '3', 'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
 
  
 

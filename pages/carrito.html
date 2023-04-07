@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/js/agregarAlCarrito.js"></script>
+    <script type="module" src="/js/agregarAlCarrito.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="favicon.png" type="image/png">
@@ -57,7 +57,7 @@
     <main>
         <section class="section__cart">
             <div class="container__btn__add__more__products">
-                <button class="btn__add__more__products">agregar mas productos</button>
+                <a href="../index.html"><button class="btn__add__more__products">agregar mas productos</button></a>
             </div>
             <div class="container__state__cart">
                 <div class="state__cart">
@@ -90,35 +90,15 @@
                     
                         <!-- van todos los productos agregados -->
                         <div class="list__products">
-                            <li class="products__added">
-                                <img src="../img/monitor-predator-z.png" alt="monitor-predator-z" id="img__products__added">
-                                <p id="name__products__added">	
-                                    PC GAMER D INTEL CORE I3 10105 | 16GB RAM | SSD 240GB | RTX 3060 TI | 650W BRONZE</p>
-                                <span id="price__products__added">$ 180.000</span>
-                                <input type="number" id="input__products__added" >
-                                <div id="container__subtotal__delete__products__added">
-                                    <p>$ 200.000</p>
-                                    <img src="./img/papelera.svg" alt="papelera" id="img__delete__products__added">
-                                </div>
-                            </li>
-                            <li class="products__added">
-                                <img src="../img/monitor-predator-z.png" alt="monitor-predator-z" id="img__products__added">
-                                <p id="name__products__added">	
-                                    PC GAMER D INTEL CORE I3 10105 | 16GB RAM | SSD 240GB | RTX 3060 TI | 650W BRONZE</p>
-                                <span id="price__products__added">$ 180.000</span>
-                                <input type="number" id="input__products__added" >
-                                <div id="container__subtotal__delete__products__added">
-                                    <p>$ 200.000</p>
-                                    <img src="./img/papelera.svg" alt="papelera" id="img__delete__products__added">
-                                </div>
-                            </li>
                         </div>
                     </div>
                     <div class="more__options">
-                        <button class="btn__add__products">
-                            <img class="arrow__left" src="../img/arrow-left.svg" alt="Agregar mas productos">
-                            <p class="text__more__products">agregar mas productos</p>
-                        </button>
+                        <a href="../index.html">
+                            <button class="btn__add__products">
+                                <img class="arrow__left" src="../img/arrow-left.svg" alt="Agregar mas productos">
+                                <p class="text__more__products">agregar mas productos</p>
+                            </button>
+                        </a>
                         <div class="container__price__total">
                             <p class="text__price__total">total:</p>
                             <span class="price__total">$ 1000.000</span>
@@ -237,6 +217,7 @@
               <p>&copy; 2023 Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script type="module" src="/js/cart/products-added.js"></script>
     <script type="module" src="/js/app.js"></script>
     <script type="module" src="/js/funcionalidades-nav-footer.js"></script>
 </body>
