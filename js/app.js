@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
-import { auth } from "./Firebase/firebase.js";
+import { auth, readProducts } from "./Firebase/firebase.js";
 import { loginCheck } from "./logincheck.js";
 import './loggedOut.js';
 
@@ -117,4 +117,6 @@ const desplazarImagen = ()=>{
         point[1].classList.add('active');             
     }
 }
+
+readProducts();
 

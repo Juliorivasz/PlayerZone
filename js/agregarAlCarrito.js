@@ -1,10 +1,10 @@
-import { registerProducts } from "./Firebase/firebase.js";
+import { registerProducts, readProducts} from "./Firebase/firebase.js";
 // se inicializa la variable que contiene el valor del local-storage
 // para hacer un contador de los productos agregados al carrito
-let saveStorage = parseInt(localStorage.getItem('count'));
-let count = localStorage.getItem('count') ? saveStorage + 1 : 1;
+// let saveStorage = parseInt(localStorage.getItem('count'));
+// let count = localStorage.getItem('count') ? saveStorage + 1 : 1;
 
-export function agregarAlCarrito(idCard, amount) {
+export function agregarAlCarrito(idCard) {
 
   // Crear el pop-up
   var popUp = document.createElement("div");
@@ -63,18 +63,20 @@ export function agregarAlCarrito(idCard, amount) {
   // Dentro del contenido del pop-up
   buttonClosePopup.addEventListener('click', () => {
     cerrarPopUp();
+    setTimeout(()=> {
+      location.reload();
+    }, 1000)
   })
 
   // contador de productos agregados al carrito
-  const countCart = document.querySelector('.counter_cart');
-  localStorage.setItem('count', count);
-  countCart.innerHTML = count++;
+  // const countCart = document.querySelector('.counter_cart');
+  // localStorage.setItem('count', count);
+  // countCart.innerHTML = count++;
 
   let titles = document.querySelectorAll('.title__card');
   let imgs = document.querySelectorAll('.img__card');
   let prices = document.querySelectorAll('.price__products');
 
-  registerProducts(titles[idCard].textContent, imgs[idCard].src, prices[idCard].textContent, 1)
 
-  console.log(titles[idCard].textContent, imgs[idCard].src, prices[idCard].textContent)
+  registerProducts(idCard,titles[idCard].textContent, imgs[idCard].src, prices[idCard].textContent, 1);
 }

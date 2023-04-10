@@ -3,6 +3,7 @@ import { getFirestore, collection, addDoc, getDocs, updateDoc, doc } from "https
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from "../alertAuth.js";
 import {loginCheck} from '../logincheck.js';
+import { productAdded } from "../cart/products-added.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // configuracion de firebase
@@ -110,25 +111,64 @@ export const nuevoUsuario = async ( email, password ) => {
     }
 }
 
-export const registerProducts = async (title, img, price, amount) => {
+// registra el producto sino existe en la base de datos del carrito 
+export const registerProducts = async (id,title, img, price, amount) => {
     const products = await verifyProducts(title, img, price, amount);
     if(products) {
-        addDoc(collection(db, 'Products'), {title, img, price, amount});
+        addDoc(collection(db, 'Products'), {id,title, img, price, amount});
     }
     console.log(products)
     // const d = doc(db, 'Products', 'jpBxyKiDQJnAlRwzUIzk');
     // console.log(d)
 }
 
+// verifica que el producto exista en el carrito y si existe le aumenta la cantidad
 export const verifyProducts = async ( title, img, price, amount )=> {
     const readData = await getDocs(collection(db, 'Products'));
     const document = readData.docs
     let existe;
     for(const docu of document) {
         const docData = docu.data();
-        // validacion de si existe o no el dato pasado al input en la base de datos
         if(docData.title === title) {
-            let amountTotal = docData.amount + 1;
+            let amountTotal = parseInt(docData.amount) + 1;
+            const docUpdate = doc(db, 'Products', docu.id);
+            await updateDoc(docUpdate, { amount: amountTotal});
+            existe = false;
+        }
+    };
+    if(existe === undefined) {
+        return !existe;
+    }else {
+        return existe;
+    }
+}
+
+// lee si en la base de datos existen productos en el carrito
+export const readProducts = async () => {
+    const readDataProducts = await getDocs(collection(db, 'Products'));
+    let amountTotal = 0;
+    readDataProducts.forEach( (doc) => {
+        const docData = doc.data();
+        const {img, title, price, amount, id} = docData; 
+        if(docData) {
+            productAdded(img,title,price,amount, id);
+            console.log(amountTotal,parseInt(amount))
+            amountTotal = amountTotal + parseInt(amount);
+        }
+    })
+    const countCart = document.querySelector('.counter_cart');
+    countCart.innerHTML = amountTotal;
+
+}
+
+export const changeAmount = async ( title, amount )=> {
+    const readData = await getDocs(collection(db, 'Products'));
+    const document = readData.docs
+    let existe;
+    for(const docu of document) {
+        const docData = docu.data();
+        if(docData.title === title) {
+            let amountTotal = amount;
             const docUpdate = doc(db, 'Products', docu.id);
             await updateDoc(docUpdate, { amount: amountTotal});
             existe = false;
