@@ -153,7 +153,6 @@ export const readProducts = async () => {
         const {img, title, price, amount, id} = docData; 
         if(docData) {
             productAdded(img,title,price,amount, id, docId);
-            console.log(doc.id)
             amountTotal = amountTotal + parseInt(amount);
         }
     })
@@ -190,5 +189,4 @@ export const deleteProducts = async (id) => {
            await deleteDoc(doc(db, 'Products', id));
         }
     })
-    // console.log(readData.docs[0].id);
 }

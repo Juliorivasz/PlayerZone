@@ -17,6 +17,7 @@ export function productAdded(img, title, price, amount, id,docId) {
     `
     if(window.location.pathname === '/pages/carrito.html'){
         document.querySelector('.list__products').appendChild(li);
+        priceTotalProducts();
     }
     amountProducts(amount, id);
     changeValueInput(id,price.split(" ")[1],title)
@@ -69,6 +70,7 @@ export function changeValueInput(idAmount, price, title) {
                 changeAmount(title, amount.value);
                 const papeleta = amount.nextSibling;
                 papeleta.nextSibling.children[0].innerHTML = `$ ${price * amount.value}.000`;
+                priceTotalProducts()
             })
         }
     })
@@ -87,4 +89,16 @@ export function emptyList(numero) {
         const listProducts = document.querySelector('.list__products');
         listProducts.appendChild(divBanner);
     }
+}
+
+
+export function priceTotalProducts() {
+    const total = document.querySelector('.price__total');
+    const prices = document.querySelectorAll('.subtotal__products__added');
+    let priceTotal = 0;
+    for(let price of prices){
+        priceTotal = priceTotal + parseInt(price.textContent.split(" ")[1]);
+        
+    }
+    total.innerHTML= `$ ${priceTotal}.000`
 }
