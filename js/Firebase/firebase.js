@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from "../alertAuth.js";
 import {loginCheck} from '../logincheck.js';
-import { productAdded } from "../cart/products-added.js";
+import { emptyList, productAdded } from "../cart/products-added.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // configuracion de firebase
@@ -149,13 +149,15 @@ export const readProducts = async () => {
     let amountTotal = 0;
     readDataProducts.forEach( (doc) => {
         const docData = doc.data();
+        const docId = doc.id;
         const {img, title, price, amount, id} = docData; 
         if(docData) {
-            productAdded(img,title,price,amount, id);
-            console.log(amountTotal,parseInt(amount))
+            productAdded(img,title,price,amount, id, docId);
+            console.log(doc.id)
             amountTotal = amountTotal + parseInt(amount);
         }
     })
+    emptyList(readDataProducts.docs.length);
     const countCart = document.querySelector('.counter_cart');
     countCart.innerHTML = amountTotal;
 
@@ -179,4 +181,14 @@ export const changeAmount = async ( title, amount )=> {
     }else {
         return existe;
     }
+}
+
+export const deleteProducts = async (id) => {
+    const readData = await getDocs(collection(db, 'Products'))
+    readData.forEach(async (document) => {
+        if(document.id === id){
+           await deleteDoc(doc(db, 'Products', id));
+        }
+    })
+    // console.log(readData.docs[0].id);
 }

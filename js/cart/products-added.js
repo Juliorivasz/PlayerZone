@@ -1,6 +1,6 @@
-import { changeAmount, verifyProducts } from "../Firebase/firebase.js";
+import { changeAmount, deleteProducts } from "../Firebase/firebase.js";
 
-export function productAdded(img, title, price, amount, id) {
+export function productAdded(img, title, price, amount, id,docId) {
     var subTotal = price.split(" ")[1] * amount;
     const li = document.createElement('li');
     li.classList = 'products__added';
@@ -9,10 +9,10 @@ export function productAdded(img, title, price, amount, id) {
     <p class="name__products__added">	
     ${title}</p>
     <span class="price__products__added" >${price}</span>
-    <input type="number" class="input__products__added" data-id-add-product=${id}>
+    <input type="number" class="input__products__added" data-id-add-product=${id} min="1">
     <div class="container__subtotal__delete__products__added">
     <p class="subtotal__products__added">$ ${subTotal}.000</p>
-    <img src="../../pages/img/papelera.svg" alt="papelera" class="img__delete__products__added">
+    <img src="../../pages/img/papelera.svg" alt="papelera" class="img__delete__products__added" data-id-delete-produt=${id}>
     </div>
     `
     if(window.location.pathname === '/pages/carrito.html'){
@@ -20,11 +20,11 @@ export function productAdded(img, title, price, amount, id) {
     }
     amountProducts(amount, id);
     changeValueInput(id,price.split(" ")[1],title)
-    papeleraRed()
+    papeleraRed(id, docId)
 }
 
-
-export function papeleraRed() {
+// 
+export function papeleraRed(id, docId) {
     const papeleras = document.querySelectorAll('.img__delete__products__added');
 
     papeleras.forEach((papelera)=> {
@@ -35,6 +35,16 @@ export function papeleraRed() {
     
         papelera.addEventListener('mouseleave', ()=> {
             papelera.src = '../../pages/img/papelera.svg';
+        })
+
+        papelera.addEventListener('click', ()=> {
+            const idPapelera = papelera.getAttribute('data-id-delete-produt');
+            if(id === idPapelera){
+                deleteProducts(docId);
+                setTimeout(()=> {
+                    location.reload();
+                }, 1500)
+            }
         })
     })
 }
@@ -55,10 +65,26 @@ export function changeValueInput(idAmount, price, title) {
         const idProduct = amount.getAttribute('data-id-add-product');
         if(idProduct === idAmount) {
             amount.addEventListener('change', ()=> {
+                if(amount.value < 1) return amount.value = 1;
                 changeAmount(title, amount.value);
                 const papeleta = amount.nextSibling;
                 papeleta.nextSibling.children[0].innerHTML = `$ ${price * amount.value}.000`;
             })
         }
     })
+}
+
+export function emptyList(numero) {
+    if(numero === 0) {
+        const divBanner = document.createElement('div');
+        divBanner.innerHTML = `
+            <h3 style="background: gray;
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            margin: 1rem 0;">No se encuentran productos agregados</h3>
+        `;
+        const listProducts = document.querySelector('.list__products');
+        listProducts.appendChild(divBanner);
+    }
 }
