@@ -162,26 +162,21 @@ export const readProducts = async () => {
 
 }
 
+// identifica en la base de datos si existe el producto le suma la cantidad y lo actualiza
 export const changeAmount = async ( title, amount )=> {
     const readData = await getDocs(collection(db, 'Products'));
     const document = readData.docs
-    let existe;
     for(const docu of document) {
         const docData = docu.data();
         if(docData.title === title) {
             let amountTotal = amount;
             const docUpdate = doc(db, 'Products', docu.id);
             await updateDoc(docUpdate, { amount: amountTotal});
-            existe = false;
         }
     };
-    if(existe === undefined) {
-        return !existe;
-    }else {
-        return existe;
-    }
 }
 
+// elimina el producto de la base de datos
 export const deleteProducts = async (id) => {
     const readData = await getDocs(collection(db, 'Products'))
     readData.forEach(async (document) => {

@@ -123,7 +123,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="radio" name="delivery" ></td>
+                                <td><input type="radio" name="delivery" class="inputSend" ></td>
                                 <td>
                                     <p class="title__method__delivery">Retiro ¡GRATIS! en Sucursal</p>
                                     <p class="subtitle__method__delivery">Podrás retirar tus artículos en cualquiera de nuestras 3 sucursales</p>
@@ -133,7 +133,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="radio" name="delivery"></td>
+                                <td><input type="radio" name="delivery" class="inputSend" data-id-delivery="sendAllPais"></td>
                                 <td>
                                     <p class="title__method__delivery">Envio en todo el pais</p>
                                     <p class="subtitle__method__delivery">Tiempos de entrega: El tiempo para retiro o envío de las Pc depende de la 
@@ -142,11 +142,11 @@
                                         depósito bancario, el tiempo corre luego de la acreditación del mismo</p>
                                 </td>
                                 <td>
-                                    <span style="width: 100%; height: 100%;">$1300</span>
+                                    <span style="width: 100%; height: 100%;" id="PriceSendAllPais">$1300</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><input type="radio" name="delivery"></td>
+                                <td><input type="radio" name="delivery" class="inputSend"></td>
                                 <td>
                                     <p class="title__method__delivery">Envio gratis en caba</p>
                                     <p class="subtitle__method__delivery">Compra mínima $30.000 pesos</p>
@@ -169,7 +169,7 @@
                     <tbody>
                         <tr>
                             <td>Subtotal:</td>
-                            <td>precio</td>
+                            <td id="only__subtotal">$0</td>
                             <td rowspan="3">
 
                                 <div class="terminos">
@@ -182,11 +182,11 @@
                         </tr>
                         <tr>
                             <td>costo del envio</td>
-                            <td>precio</td>
+                            <td id="price__delivery">$0</td>
                         </tr>
                         <tr>
                             <td>total a pagar:</td>
-                            <td>precio</td>
+                            <td id="total__pay">$0</td>
                         </tr>
                     </tbody>
                 </table>

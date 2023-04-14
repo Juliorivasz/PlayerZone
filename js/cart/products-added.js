@@ -1,5 +1,6 @@
 import { changeAmount, deleteProducts } from "../Firebase/firebase.js";
 
+// crea el producto en la lista del carrito desde la base de datos
 export function productAdded(img, title, price, amount, id,docId) {
     var subTotal = price.split(" ")[1] * amount;
     const li = document.createElement('li');
@@ -24,7 +25,7 @@ export function productAdded(img, title, price, amount, id,docId) {
     papeleraRed(id, docId)
 }
 
-// 
+// realiza el estilo de la papelera y la eliminacion del producto de la base de datos
 export function papeleraRed(id, docId) {
     const papeleras = document.querySelectorAll('.img__delete__products__added');
 
@@ -50,6 +51,7 @@ export function papeleraRed(id, docId) {
     })
 }
 
+// coloca la cantidad inicial al agregar el producto al carrito desde el home
 export function amountProducts(amountProduct, idAmount) {
     const amounts = document.querySelectorAll('.input__products__added');
     amounts.forEach((amount)=> {
@@ -60,6 +62,7 @@ export function amountProducts(amountProduct, idAmount) {
     })
 }
 
+// al cambiar el valor de la cantidad de productos, hace la modificacion del subtotal
 export function changeValueInput(idAmount, price, title) {
     const amounts = document.querySelectorAll('.input__products__added');
     amounts.forEach((amount)=> {
@@ -76,6 +79,7 @@ export function changeValueInput(idAmount, price, title) {
     })
 }
 
+// realiza el aviso de que no se ah agregado ningun producto al carrito
 export function emptyList(numero) {
     if(numero === 0) {
         const divBanner = document.createElement('div');
@@ -91,14 +95,51 @@ export function emptyList(numero) {
     }
 }
 
-
+// realiza el total de los productos agregados al carro
 export function priceTotalProducts() {
     const total = document.querySelector('.price__total');
+    const subtotalFinal = document.querySelector('#only__subtotal');
     const prices = document.querySelectorAll('.subtotal__products__added');
+    const totalPay = document.querySelector('#total__pay');
+    const radio = document.querySelector('[data-id-delivery]');
     let priceTotal = 0;
     for(let price of prices){
         priceTotal = priceTotal + parseInt(price.textContent.split(" ")[1]);
         
     }
-    total.innerHTML= `$ ${priceTotal}.000`
+    total.innerHTML= `$ ${priceTotal}.000`;
+    subtotalFinal.innerHTML = `$${priceTotal}.000`;
+    if(radio.checked){
+        totalPay.innerHTML = `$${priceTotal + 1}.300`;
+        console.log(radio.checked)
+    }else {
+        totalPay.innerHTML = `$${priceTotal}.000`;
+    }
 }
+
+// selecciona el metodo de envio del producto modifica el total
+export function deliveryMethod() {
+    const inputRadio = document.querySelectorAll('.inputSend');
+    const priceInputRadio = document.querySelector('#PriceSendAllPais');
+    const priceDelivery = document.querySelector('#price__delivery');
+    const subtotalFinal = document.querySelector('#only__subtotal'); 
+    const totalPay = document.querySelector('#total__pay');
+    inputRadio.forEach( (radio)=> {
+        const sendAllPais = radio.getAttribute('data-id-delivery');
+        radio.addEventListener('change', ()=> {
+            if(radio.checked && sendAllPais) {
+                priceDelivery.textContent = priceInputRadio.textContent;
+                totalPay.innerHTML = `$${parseInt(subtotalFinal.textContent.slice(1)) + parseInt(priceDelivery.textContent.slice(1,2))}.300`;
+                console.log(subtotalFinal);
+            }else {
+                priceDelivery.textContent = `$0`;
+                totalPay.innerHTML = subtotalFinal.textContent;
+            }
+        })
+        
+    })
+}
+
+deliveryMethod();
+
+
