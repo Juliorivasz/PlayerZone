@@ -111,7 +111,6 @@ export function priceTotalProducts() {
     subtotalFinal.innerHTML = `$${priceTotal}.000`;
     if(radio.checked){
         totalPay.innerHTML = `$${priceTotal + 1}.300`;
-        console.log(radio.checked)
     }else {
         totalPay.innerHTML = `$${priceTotal}.000`;
     }
@@ -129,8 +128,8 @@ export function deliveryMethod() {
         radio.addEventListener('change', ()=> {
             if(radio.checked && sendAllPais) {
                 priceDelivery.textContent = priceInputRadio.textContent;
-                totalPay.innerHTML = `$${parseInt(subtotalFinal.textContent.slice(1)) + parseInt(priceDelivery.textContent.slice(1,2))}.300`;
-                console.log(subtotalFinal);
+                if(subtotalFinal.textContent !== '$0'){
+                totalPay.innerHTML = `$${parseInt(subtotalFinal.textContent.slice(1)) + parseInt(priceDelivery.textContent.slice(1,2))}.300`};
             }else {
                 priceDelivery.textContent = `$0`;
                 totalPay.innerHTML = subtotalFinal.textContent;
