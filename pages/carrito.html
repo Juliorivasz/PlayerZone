@@ -60,15 +60,15 @@
                 <a href="../index.html"><button class="btn__add__more__products">agregar mas productos</button></a>
             </div>
             <div class="container__state__cart">
-                <div class="state__cart">
+                <div class="state__cart" id="shipping">
                     <img class="method__cart" src="../img/shipping-fast-solid.svg" alt="shipping">
                     <p class="text__cart">carrito/forma de entrega</p>
                 </div>
-                <div class="state__cart">
+                <div class="state__cart" id="credit__card">
                     <img class="method__cart" src="../img/credit-card-solid.svg" alt="credit card">
                     <p class="text__cart">formas de pago</p>
                 </div>
-                <div class="state__cart">
+                <div class="state__cart" id="security">
                     <img class="method__cart" src="../img/bxs-check-shield.svg" alt="security">
                     <p class="text__cart">confirmacion de la compra</p>
                 </div>
@@ -139,7 +139,8 @@
                                     <p class="subtitle__method__delivery">Tiempos de entrega: El tiempo para retiro o envío de las Pc depende de la 
                                         cantidad de armados que tengamos en el momento, una vez realizada la compra 
                                         se le informara el día de la entrega con exactitud. En caso de pago por transferencia o 
-                                        depósito bancario, el tiempo corre luego de la acreditación del mismo</p>
+                                        depósito bancario, el tiempo corre luego de la acreditación del mismo
+                                    </p>
                                 </td>
                                 <td>
                                     <span style="width: 100%; height: 100%;" id="PriceSendAllPais">$1300</span>
@@ -165,31 +166,32 @@
                     <h3 class="title__shopping__summary">resumen de compra</h3>
                 </div>
 
-                <table id="table__summary">
-                    <tbody>
-                        <tr>
-                            <td>Subtotal:</td>
-                            <td id="only__subtotal">$0</td>
-                            <td rowspan="3">
-
-                                <div class="terminos">
-                                    <input type="checkbox" style="margin: 0 1rem;" >
-                                    <p>Aceptar terminos y condiciones</p>
-                                </div>
-                                
-                                <button class="btn__start__pay">iniciar pago</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>costo del envio</td>
-                            <td id="price__delivery">$0</td>
-                        </tr>
-                        <tr>
-                            <td>total a pagar:</td>
-                            <td id="total__pay">$0</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container__table__shopping__summary">
+                    <table id="table__summary">
+                        <tbody>
+                            <tr>
+                                <td>Subtotal:</td>
+                                <td id="only__subtotal">$0</td>
+                                <td rowspan="3" id="td__pay">
+                                    <div class="terminos">
+                                        <input type="checkbox" style="margin: 0 1rem;" >
+                                        <p>Aceptar terminos y condiciones</p>
+                                    </div>
+                    
+                                    <button class="btn__start__pay">iniciar pago</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>costo del envio</td>
+                                <td id="price__delivery">$0</td>
+                            </tr>
+                            <tr>
+                                <td>total a pagar:</td>
+                                <td id="total__pay">$0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </main>

@@ -1,4 +1,6 @@
+import './state-shopping.js';
 import { changeAmount, deleteProducts } from "../Firebase/firebase.js";
+
 
 // crea el producto en la lista del carrito desde la base de datos
 export function productAdded(img, title, price, amount, id,docId) {
