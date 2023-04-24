@@ -93,7 +93,9 @@ export function emptyList(numero) {
             margin: 1rem 0;">No se encuentran productos agregados</h3>
         `;
         const listProducts = document.querySelector('.list__products');
-        listProducts.appendChild(divBanner);
+        if(location.pathname === '/pages/carrito.html'){
+            listProducts.appendChild(divBanner);
+    }
     }
 }
 
