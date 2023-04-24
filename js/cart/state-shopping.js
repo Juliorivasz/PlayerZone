@@ -7,8 +7,6 @@ const tds = document.querySelectorAll('td');
 const tBody = document.querySelectorAll('tbody');
 const tdPay = document.querySelector('#td__pay');
 
-console.log(window.location.pathname === '/pages/carrito.html');
-
 (function StateShopping(){
     if(window.location.pathname === '/pages/carrito.html' && window.innerWidth <= 990){
         creditCard.style = 'display: none';
@@ -30,5 +28,17 @@ console.log(window.location.pathname === '/pages/carrito.html');
         trFinal.appendChild(tdFinal)
         tBody[tBody.length -1].appendChild(trFinal)
 
+        const input = document.querySelectorAll('input');
+        const buttons = document.querySelectorAll('.btn__start__pay');
+
+        buttons[1].addEventListener('click', (e)=> {
+            e.preventDefault();
+            if(input[5].checked) {
+                alert('ahora elige la forma de pago');
+            }else {
+                alert('aceptar los terminos y condiciones');
+            }
+            console.log(buttons)
+        })
     }
 })()

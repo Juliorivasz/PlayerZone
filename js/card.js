@@ -39,7 +39,7 @@ function card(section, id, title, imagen, stock, price, financing) {
 };
 
 
-card(products, '0', 'Monitor Predator 27" curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
+card(products, '0', 'Monitor Predator 27 curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
 card(products, '1', 'i5 12600 Procesador', '/img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
 card(products, '2', 'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
 card(products, '3', 'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
