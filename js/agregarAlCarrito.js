@@ -1,4 +1,5 @@
 import { registerProducts, readProducts} from "./Firebase/firebase.js";
+import { pantallaDeCarga } from "./cart/products-added.js";
 // se inicializa la variable que contiene el valor del local-storage
 // para hacer un contador de los productos agregados al carrito
 // let saveStorage = parseInt(localStorage.getItem('count'));
@@ -63,9 +64,10 @@ export function agregarAlCarrito(idCard) {
   // Dentro del contenido del pop-up
   buttonClosePopup.addEventListener('click', () => {
     cerrarPopUp();
+    pantallaDeCarga();
     setTimeout(()=> {
       location.reload();
-    }, 1000)
+    }, 1500)
   })
 
   // contador de productos agregados al carrito

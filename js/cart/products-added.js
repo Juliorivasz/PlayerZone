@@ -41,13 +41,16 @@ export function papeleraRed(id, docId) {
             papelera.src = '../../pages/img/papelera.svg';
         })
 
-        papelera.addEventListener('click', ()=> {
+        papelera.addEventListener('click', async (e)=> {
             const idPapelera = papelera.getAttribute('data-id-delete-produt');
             if(id === idPapelera){
-                deleteProducts(docId);
+                console.log(idPapelera)
+                console.log(id)
+                await deleteProducts(docId);
+                pantallaDeCarga();
                 setTimeout(()=> {
                     location.reload();
-                }, 1500)
+                }, 2000)
             }
         })
     })
@@ -141,6 +144,42 @@ export function deliveryMethod() {
         })
         
     })
+}
+
+// hace una pantalla de carga circular
+export const pantallaDeCarga = () => {
+    const body = document.querySelector('body');
+
+    const h1 = document.createElement('h1');
+    h1.style = 'color: white;';
+    h1.innerText = 'Cargando...';
+
+    const divPrincipal = document.createElement('div');
+    divPrincipal.classList.add('cargando');
+    divPrincipal.style = `display: flex; 
+                          position: fixed; 
+                          top: 0; left: 0; 
+                          width: 100%; height: 100%; 
+                          background-color: rgba(0, 0, 0, 0.5); 
+                          z-index: 9999; 
+                          justify-content: center;
+                          align-items: center;
+                          flex-direction: column;
+                          `;
+
+    const divMensaje = document.createElement('div');
+    divMensaje.style = `position: relative; 
+                        width: 100px; 
+                        height: 100px; 
+                        border-radius: 50%; 
+                        border: 10px solid #f3f3f3; 
+                        border-top-color: #3498db; 
+                        animation: girar 1s linear infinite;
+                        `;
+    
+    divPrincipal.appendChild(h1);
+    divPrincipal.appendChild(divMensaje);
+    body.appendChild(divPrincipal);
 }
 
 deliveryMethod();
