@@ -1,6 +1,7 @@
 import './Firebase/firebase.js';
 import './mostrarContraseña.js';
 import { nuevoUsuario, verifyUsers } from './Firebase/firebase.js';
+import { pantallaDeCarga } from './cart/products-added.js';
 
 const formRegister = document.querySelector('.form__register');
 const telefonoInput = document.getElementById('telefono');
@@ -41,8 +42,10 @@ formRegister.addEventListener('submit', async (e)=> {
     
     if(validityUsers) {
       const authNewUser = await nuevoUsuario(infoData.email, infoData.password);
-      formRegister.reset();
-      window.location.href = '../index.html';
+      pantallaDeCarga();
+      setTimeout(()=> {
+        window.location.href = '../index.html';
+      }, 1000);
     }
 
 })

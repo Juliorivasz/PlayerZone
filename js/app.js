@@ -12,13 +12,11 @@ const countCart = document.querySelector('.counter_cart');
 
 countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('count') : 0;
 
-
 // escuchar el estado de login
 onAuthStateChanged(auth, async (user)=>{
     // hace la modificacion estilizada para el login
     loginCheck(user);
 })
-
 
 // cuando hago click en un punto
     // Saber la posicion de ese punto

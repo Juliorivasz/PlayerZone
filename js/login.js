@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9
 import { alertAuth } from './alertAuth.js';
 import './googleLogin.js';
 import './facebookLogin.js';
+import { pantallaDeCarga } from './cart/products-added.js';
 
 
 const formulario = document.querySelector('.form__login');
@@ -31,6 +32,7 @@ formulario.addEventListener('submit', async (event)=>{
     try {
         const credentials = await signInWithEmailAndPassword(auth, usuario, contrasena);
         alertAuth(`Bienvenido ${usuario}`);
+        pantallaDeCarga();
         setTimeout(()=> {
             window.location.href = "../index.html";
         }, 2000);

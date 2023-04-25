@@ -1,3 +1,6 @@
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+import { auth } from "../Firebase/firebase.js";
+
 const shipping = document.querySelector('#shipping');
 const creditCard = document.querySelector('#credit__card');
 const security = document.querySelector('#security');
@@ -33,12 +36,16 @@ const tdPay = document.querySelector('#td__pay');
 
         buttons[1].addEventListener('click', (e)=> {
             e.preventDefault();
-            if(input[5].checked) {
-                alert('ahora elige la forma de pago');
-            }else {
-                alert('aceptar los terminos y condiciones');
-            }
-            console.log(buttons)
+            onAuthStateChanged(auth, async (user)=>{
+                if(user){
+                    if(input[5].checked) {
+                    alert('ahora elige la forma de pago');
+                }else {
+                    alert('aceptar los terminos y condiciones');
+                }}else {
+                    alert('Por favor, Iniciar Sesion');
+                }
+            })
         })
     }
 })()

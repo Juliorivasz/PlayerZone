@@ -3,7 +3,7 @@ import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, deleteDoc } 
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 import { alertAuth } from "../alertAuth.js";
 import {loginCheck} from '../logincheck.js';
-import { emptyList, productAdded } from "../cart/products-added.js";
+import { emptyList, pantallaDeCarga, productAdded } from "../cart/products-added.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // configuracion de firebase
@@ -117,9 +117,6 @@ export const registerProducts = async (id,title, img, price, amount) => {
     if(products) {
         addDoc(collection(db, 'Products'), {id,title, img, price, amount});
     }
-    console.log(products)
-    // const d = doc(db, 'Products', 'jpBxyKiDQJnAlRwzUIzk');
-    // console.log(d)
 }
 
 // verifica que el producto exista en el carrito y si existe le aumenta la cantidad
