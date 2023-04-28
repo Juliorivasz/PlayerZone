@@ -10,6 +10,27 @@ const tds = document.querySelectorAll('td');
 const tBody = document.querySelectorAll('tbody');
 const tdPay = document.querySelector('#td__pay');
 
+const buttonPay = (numeroDeBoton, numeroDeInput)=> {
+    const input = document.querySelectorAll('input');
+    const buttons = document.querySelectorAll('.btn__start__pay');
+    console.log(buttons);
+    console.log(input)
+
+        buttons[numeroDeBoton].addEventListener('click', (e)=> {
+            e.preventDefault();
+            onAuthStateChanged(auth, async (user)=>{
+                if(user){
+                    if(input[numeroDeInput].checked) {
+                    alert('ahora elige la forma de pago');
+                }else {
+                    alert('aceptar los terminos y condiciones');
+                }}else {
+                    alert('Por favor, Iniciar Sesion');
+                }
+            })
+        })
+}
+
 (function StateShopping(){
     if(window.location.pathname === '/pages/carrito.html' && window.innerWidth <= 990){
         creditCard.style = 'display: none';
@@ -31,21 +52,10 @@ const tdPay = document.querySelector('#td__pay');
         trFinal.appendChild(tdFinal)
         tBody[tBody.length -1].appendChild(trFinal)
 
-        const input = document.querySelectorAll('input');
-        const buttons = document.querySelectorAll('.btn__start__pay');
-
-        buttons[1].addEventListener('click', (e)=> {
-            e.preventDefault();
-            onAuthStateChanged(auth, async (user)=>{
-                if(user){
-                    if(input[5].checked) {
-                    alert('ahora elige la forma de pago');
-                }else {
-                    alert('aceptar los terminos y condiciones');
-                }}else {
-                    alert('Por favor, Iniciar Sesion');
-                }
-            })
-        })
+        buttonPay(1,5);
+    };
+    if(window.location.pathname === '/pages/carrito.html'){
+        buttonPay(0,4);
     }
 })()
+
