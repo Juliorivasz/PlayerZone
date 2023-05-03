@@ -39,6 +39,8 @@ export function card(section, id, title, imagen, stock, price, financing) {
         const idCard = btnAgregarAlCarrito.getAttribute('data-id');
         btnAgregarAlCarrito.onclick = () => agregarAlCarrito(idCard);
     })
+    console.log(btnsAgregarAlCarrito)
+
     return div;
 };
 

@@ -18,6 +18,9 @@ function creadorDeCards(db, tipos) {
         div.classList.add('products');
         db.componentes[compo].forEach( (producto)=> {
             card(div, producto.id, producto.nombre, producto.img, producto.stock, producto.precio, producto.financiacion);
+            if(compo === procesadores){
+                divProcesadores.appendChild(div);
+            }
         })
         if(compo === almacenamiento){
             divAlmacenamiento.appendChild(div);
@@ -33,9 +36,6 @@ function creadorDeCards(db, tipos) {
         }
         if(compo === memoriaRam){
             divMemoria.appendChild(div);
-        }
-        if(compo === procesadores){
-            divProcesadores.appendChild(div);
         }
     });
 }

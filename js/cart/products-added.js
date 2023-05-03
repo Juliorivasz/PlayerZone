@@ -14,7 +14,7 @@ export function productAdded(img, title, price, amount, id,docId) {
     <span class="price__products__added" >${price}</span>
     <input type="number" class="input__products__added" data-id-add-product=${id} min="1">
     <div class="container__subtotal__delete__products__added">
-    <p class="subtotal__products__added">$ ${subTotal}.000</p>
+    <p class="subtotal__products__added">$ ${Number.isInteger(subTotal) ? `${subTotal}.000` : `${subTotal}00`}</p>
     <img src="../../pages/img/papelera.svg" alt="papelera" class="img__delete__products__added" data-id-delete-produt=${id}>
     </div>
     `
@@ -48,7 +48,7 @@ export function papeleraRed(id, docId) {
                 pantallaDeCarga();
                 setTimeout(()=> {
                     location.reload();
-                }, 2000)
+                }, 1600)
             }
         })
     })
@@ -75,7 +75,7 @@ export function changeValueInput(idAmount, price, title) {
                 if(amount.value < 1) return amount.value = 1;
                 changeAmount(title, amount.value);
                 const papeleta = amount.nextSibling;
-                papeleta.nextSibling.children[0].innerHTML = `$ ${price * amount.value}.000`;
+                papeleta.nextSibling.children[0].innerHTML = `${Number.isInteger(price * amount.value) ? `$ ${price * amount.value}.000` : `$ ${price * amount.value}00`}`;
                 priceTotalProducts()
             })
         }
