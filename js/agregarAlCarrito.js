@@ -33,8 +33,82 @@ export function agregarAlCarrito(idCard) {
     <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <p style="margin: 5px 0">Agregado al Carrito con Exito</p>
         <img src="/img/check-circle-fill.svg" alt="close" style="width: 50px; margin: 15px 0;">
+        <div style="display: flex; align-items: center; text-align: center; flex-direction: column;">
+        <button id="continuar">Continuar</button>
+        <button id="verPedido">Ver Pedido</button>
+        </div>
 `;
   popUp.appendChild(contenidoPopUp);
+
+  const continuar = contenidoPopUp.querySelector('div').querySelector('div').querySelector('#continuar');
+  const verPedido = contenidoPopUp.querySelector('div').querySelector('div').querySelector('#verPedido');
+   
+  
+  continuar.style = `
+      color: white;
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin: 0.5rem 1rem;
+      padding: 0.7rem;
+      border-radius: 10px;
+      background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
+      background-size: 200% auto;
+      border: none;
+      transition: .5s;
+`;
+verPedido.style = `
+      color: white;
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      padding: 0.7rem;
+      border-radius: 10px;
+      background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
+      background-size: 200% auto;
+      border: none;
+      transition: .5s;
+`;
+
+continuar.addEventListener('mouseover', () => {
+  continuar.style.backgroundPosition = '100%';
+  continuar.style.cursor = 'pointer';
+
+})
+
+continuar.addEventListener('mouseleave', () => {
+  continuar.style.backgroundPosition = '200%';
+})
+
+continuar.addEventListener('click', ()=> {
+    cerrarPopUp();
+    pantallaDeCarga();
+    setTimeout(()=> {
+      location.reload();
+    }, 1000)
+})
+
+verPedido.addEventListener('mouseover', () => {
+  verPedido.style.backgroundPosition = '100%';
+  verPedido.style.cursor = 'pointer';
+
+})
+
+verPedido.addEventListener('mouseleave', () => {
+  verPedido.style.backgroundPosition = '200%';
+})
+
+verPedido.addEventListener('click', ()=> {
+    cerrarPopUp();
+    pantallaDeCarga();
+    setTimeout(()=> {
+      location.href= '/pages/carrito.html';
+    }, 1000)
+})
+
+  console.log();
 
   // Agregar el pop-up a la página
   document.body.appendChild(popUp);
@@ -67,7 +141,7 @@ export function agregarAlCarrito(idCard) {
     pantallaDeCarga();
     setTimeout(()=> {
       location.reload();
-    }, 1500)
+    }, 1000)
   })
 
   // contador de productos agregados al carrito

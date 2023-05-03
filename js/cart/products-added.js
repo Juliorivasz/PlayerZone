@@ -32,7 +32,7 @@ export function papeleraRed(id, docId) {
     const papeleras = document.querySelectorAll('.img__delete__products__added');
 
     papeleras.forEach((papelera)=> {
-        papelera.addEventListener('mouseover', (e)=> {
+        papelera.addEventListener('mouseover', ()=> {
             papelera.src = '../../pages/img/papelera-red.svg';
             papelera.style.cursor = 'pointer';
         })
@@ -41,7 +41,7 @@ export function papeleraRed(id, docId) {
             papelera.src = '../../pages/img/papelera.svg';
         })
 
-        papelera.addEventListener('click', async (e)=> {
+        papelera.addEventListener('click', async ()=> {
             const idPapelera = papelera.getAttribute('data-id-delete-produt');
             if(id === idPapelera){
                 await deleteProducts(docId);
