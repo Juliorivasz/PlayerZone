@@ -42,7 +42,7 @@ export function card(section, id, title, imagen, stock, price, financing) {
     return div;
 };
 
-if(window.location.pathname === '/index.html'){
+if(window.location.pathname === '/index.html' || window.location.pathname === '/' ){
     card(products, '0', 'Monitor Predator 27 curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
     card(products, '1', 'i5 12600 Procesador', '/img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
     card(products, '2', 'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');

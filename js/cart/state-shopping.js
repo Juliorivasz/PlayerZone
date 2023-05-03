@@ -13,8 +13,6 @@ const tdPay = document.querySelector('#td__pay');
 const buttonPay = (numeroDeBoton, numeroDeInput)=> {
     const input = document.querySelectorAll('input');
     const buttons = document.querySelectorAll('.btn__start__pay');
-    console.log(buttons);
-    console.log(input)
 
         buttons[numeroDeBoton].addEventListener('click', (e)=> {
             e.preventDefault();

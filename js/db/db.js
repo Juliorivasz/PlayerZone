@@ -2,7 +2,7 @@ export const baseDeDatos = {
     componentes: {
         almacenamiento: [
                 {
-                    id: '5',
+                    id: '0',
                     nombre: 'Disco Ssd Patriot Elite 120gb',
                     img:'/pages/img/ssd/DISCO-SSD-120GB-PATRIOT-BURST-ELITE-SOLID-SATA-III.webp',
                     stock: true,
@@ -10,7 +10,7 @@ export const baseDeDatos = {
                     financiacion: '16.000'
                 },
                 {
-                    id: '6',
+                    id: '1',
                     nombre: 'Disco Ssd 240gb A400 Sata3 2.5 Kingston',
                     img:'/pages/img/ssd/ssd-240.jpg',
                     stock: true,
@@ -18,7 +18,7 @@ export const baseDeDatos = {
                     financiacion: '25.000'
                 },
                 {
-                    id: '7',
+                    id: '2',
                     nombre: 'Disco Ssd Patriot Burst Elite 480gb',
                     img:'/pages/img/ssd/ssd-480.jpg',
                     stock: true,
@@ -26,7 +26,7 @@ export const baseDeDatos = {
                     financiacion: '30.000'
                 },
                 {
-                    id: '8',
+                    id: '3',
                     nombre: 'Disco Ssd 500gb Crucial Bx500',
                     img:'/pages/img/ssd/ssd-500.jpg',
                     stock: true,
@@ -36,7 +36,7 @@ export const baseDeDatos = {
             ],
         fuenteDeAlimentacion: [
                 {
-                    id: '9',
+                    id: '4',
                     nombre: 'Fuente Gigabyte P450b 450w 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente450w.webp',
                     stock: true,
@@ -44,7 +44,7 @@ export const baseDeDatos = {
                     financiacion: '48.000'
                 },
                 {
-                    id: '10',
+                    id: '5',
                     nombre: 'Fuente Evga 500w Br 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente500w.jpg',
                     stock: true,
@@ -52,7 +52,7 @@ export const baseDeDatos = {
                     financiacion: '55.000'
                 },
                 {
-                    id: '11',
+                    id: '6',
                     nombre: 'Fuente Aureox Unlimited Series 550w 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente550w.png',
                     stock: true,
@@ -60,7 +60,7 @@ export const baseDeDatos = {
                     financiacion: '45.000'
                 },
                 {
-                    id: '12',
+                    id: '7',
                     nombre: 'Fuente Gamer Evga 600w Br 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente600w.jpg',
                     stock: true,
@@ -70,7 +70,7 @@ export const baseDeDatos = {
             ],
         gabinete: [
                 {
-                    id: '13',
+                    id: '8',
                     nombre: 'Gabinete Aureox Sculptor Arx 380 G',
                     img: '/pages/img/gabinete/aureox380.png',
                     stock: true,
@@ -78,7 +78,7 @@ export const baseDeDatos = {
                     financiacion: '48.000'
                 },
                 {
-                    id: '14',
+                    id: '9',
                     nombre: 'Gabinete Corsair Carbide 275r Mid-tower Tempered Glass Black',
                     img: '/pages/img/gabinete/CorsairCarbide.jpg',
                     stock: true,
@@ -86,7 +86,7 @@ export const baseDeDatos = {
                     financiacion: '72.000'
                 },
                 {
-                    id: '15',
+                    id: '10',
                     nombre: 'Gabinete Corsair 220t Rgb Tempered Glass Mid-tower Smart Icue Black',
                     img: '/pages/img/gabinete/Corsair220t.jpg',
                     stock: true,
@@ -96,7 +96,7 @@ export const baseDeDatos = {
             ],
         motherboard: [
                 {
-                    id: '16',
+                    id: '11',
                     nombre: 'Mother 1151 Gigabyte H310m Ds2 2.0',
                     img: '/pages/img/motherboard/GigabyteH310m.png',
                     stock: true,
@@ -104,7 +104,7 @@ export const baseDeDatos = {
                     financiacion: '36.000'
                 },
                 {
-                    id: '17',
+                    id: '12',
                     nombre: 'Mother 1200 Asrock H510m-hdv',
                     img: '/pages/img/motherboard/AsrockH510m-hdv.png',
                     stock: true,
@@ -112,7 +112,7 @@ export const baseDeDatos = {
                     financiacion: ' 72.900'
                 },
                 {
-                    id: '18',
+                    id: '13',
                     nombre: 'Mother Am4 Msi A520m-a Pro(3ra A 5ta Gen)',
                     img: '/pages/img/motherboard/MsiA520m-aPro.jpg',
                     stock: true,
@@ -120,7 +120,7 @@ export const baseDeDatos = {
                     financiacion: '84.000'
                 },
                 {
-                    id: '19',
+                    id: '14',
                     nombre: 'Mother (am4) B550 Aorus Pro Ac',
                     img: '/pages/img/motherboard/B550AorusProAc.png',
                     stock: true,
@@ -130,7 +130,7 @@ export const baseDeDatos = {
             ],
         memoriaRam: [
                 {
-                    id: '20',
+                    id: '15',
                     nombre: 'Memoria Ram Ddr4 Hikvision 8gb 3200mhz U100 Rgb',
                     img: '/pages/img/memoriaRam/Hikvision8gb3200mhzU100Rgb.jpg',
                     stock: true,
@@ -138,7 +138,7 @@ export const baseDeDatos = {
                     financiacion: '48.000'
                 },
                 {
-                    id: '21',
+                    id: '16',
                     nombre: 'Memoria Ram Ddr4 Kit 16gb 3600mhz (8gbx2) Corsair Vengeance Rgb Pro',
                     img: '/pages/img/memoriaRam/16gb3600mhz(8gbx2)CorsairVengeanceRgbPro.jpg',
                     stock: true,
@@ -148,7 +148,7 @@ export const baseDeDatos = {
             ],
         procesadores: [
                 {
-                    id: '22',
+                    id: '17',
                     nombre: 'Procesador Intel Core I3 10100f 4.30ghz Turbo Max 10ma Gen (lga 1200)',
                     img: '/pages/img/procesadores/i310100f.webp',
                     stock: true,
@@ -156,7 +156,7 @@ export const baseDeDatos = {
                     financiacion: '66.300'
                 },
                 {
-                    id: '23',
+                    id: '18',
                     nombre: 'Procesador Intel Core I5 10400f 4,30 Ghz 10 Gen Lga 1200',
                     img: '/pages/img/procesadores/i510400f.jpg',
                     stock: true,
@@ -164,7 +164,7 @@ export const baseDeDatos = {
                     financiacion: '180.000'
                 },
                 {
-                    id: '24',
+                    id: '19',
                     nombre: 'Procesador Intel Core I7 12700kf 12va (lga1700)',
                     img: '/pages/img/procesadores/i712700k.webp',
                     stock: true,
@@ -172,7 +172,7 @@ export const baseDeDatos = {
                     financiacion: '444.000'
                 },
                 {
-                    id: '25',
+                    id: '20',
                     nombre: 'Outlet Procesador Amd Ryzen 5 3400g 4.2ghz Am4 C/ Video Vega 11',
                     img: '/pages/img/procesadores/amd53400g.jpg',
                     stock: true,
@@ -180,7 +180,7 @@ export const baseDeDatos = {
                     financiacion: '96.000'
                 },
                 {
-                    id: '26',
+                    id: '21',
                     nombre: 'Procesador Amd (am4) Ryzen 5 5600g 4.4ghz 6 Nucleos 12 Hilos',
                     img: '/pages/img/procesadores/amd55600g.jpg',
                     stock: true,
@@ -188,7 +188,7 @@ export const baseDeDatos = {
                     financiacion: '276.000'
                 },
                 {
-                    id: '27',
+                    id: '22',
                     nombre: 'Procesador Amd Ryzen 9 7950x 5.7ghz Am5 Cores 16 / Threads 32 - Sin Cooler',
                     img: '/pages/img/procesadores/amd97950x.webp',
                     stock: true,

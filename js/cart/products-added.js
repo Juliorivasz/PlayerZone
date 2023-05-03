@@ -44,8 +44,6 @@ export function papeleraRed(id, docId) {
         papelera.addEventListener('click', async (e)=> {
             const idPapelera = papelera.getAttribute('data-id-delete-produt');
             if(id === idPapelera){
-                console.log(idPapelera)
-                console.log(id)
                 await deleteProducts(docId);
                 pantallaDeCarga();
                 setTimeout(()=> {

@@ -115,7 +115,14 @@ export const nuevoUsuario = async ( email, password ) => {
 export const registerProducts = async (id,title, img, price, amount) => {
     const products = await verifyProducts(title, img, price, amount);
     if(products) {
-        addDoc(collection(db, 'Products'), {id,title, img, price, amount});
+        if(window.location.pathname === '/pages/componentes.html'){
+            id = parseInt(id) + 3;
+            id = id.toString();
+            addDoc(collection(db, 'Products'), {id,title, img, price, amount});
+        }else{
+            console.log(id)
+            addDoc(collection(db, 'Products'), {id,title, img, price, amount});
+        }
     }
 }
 
