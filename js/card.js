@@ -3,17 +3,21 @@
 import { agregarAlCarrito } from "./agregarAlCarrito.js";
 const products = document.querySelector('.products');
 
-function card(section, id, title, imagen, stock, price, financing) { 
+export function card(section, id, title, imagen, stock, price, financing) { 
+    // if (!section) {
+    //     console.error("El elemento section es nulo o indefinido");
+    //     return;
+    // }
     const div = document.createElement('div');
     div.classList.add('container__card');
     div.innerHTML = `
             <div class="container__img__card">
-                <img class="img__card" src=${imagen} alt="i5 procesador">
+                <img class="img__card" src=${imagen}>
             </div>
             <div class="container__info__card">
                 <h1 class="title__card">${title}</h1>
                 <div class="container__check__stock">
-                    <img src=${stock ? "./img/check-circle-fill.svg" : "./img/x-circle-fill.svg"} alt="check__fill">
+                    <img src=${stock ? "/img/check-circle-fill.svg" : "./img/x-circle-fill.svg"} alt="check__fill">
                     <span class="stock__products">Producto ${stock ? 'con' : 'sin'} Stock</span>
                 </div>
                 <span class="price__products__old" >$ ${price*1.2}.000</span>
@@ -38,14 +42,10 @@ function card(section, id, title, imagen, stock, price, financing) {
     return div;
 };
 
-
-card(products, '0', 'Monitor Predator 27 curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
-card(products, '1', 'i5 12600 Procesador', '/img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
-card(products, '2', 'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
-card(products, '3', 'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
-
- 
-
-
-export default card;
+if(window.location.pathname === '/index.html'){
+    card(products, '0', 'Monitor Predator 27 curvo', './img/monitor-predator-z.png', true, '150.000', '200.000');
+    card(products, '1', 'i5 12600 Procesador', '/img/Procesador-Intel-Core-i5-11400.png', false, '120.000', '180.000');
+    card(products, '2', 'Motherboard Asus Rog Strix b450 F', './img/mother-asus-rog.png', true, '60.000', '90.000');
+    card(products, '3', 'Placa de Video RTX 2060 6gb Gddr6', './img/placa-de-video-rtx2060.png', true, '160.000', '210.000');
+}
 

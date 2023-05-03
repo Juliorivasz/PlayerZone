@@ -23,7 +23,7 @@ const buttonPay = (numeroDeBoton, numeroDeInput)=> {
                     if(input[numeroDeInput].checked) {
                     alert('ahora elige la forma de pago');
                 }else {
-                    alert('aceptar los terminos y condiciones');
+                    alert('debes aceptar los terminos y condiciones');
                 }}else {
                     alert('Por favor, Iniciar Sesion');
                 }
