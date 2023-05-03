@@ -20,7 +20,7 @@ export function card(section, id, title, imagen, stock, price, financing) {
                     <img src=${stock ? "/img/check-circle-fill.svg" : "./img/x-circle-fill.svg"} alt="check__fill">
                     <span class="stock__products">Producto ${stock ? 'con' : 'sin'} Stock</span>
                 </div>
-                <span class="price__products__old" >$ ${price*1.2}.000</span>
+                <span class="price__products__old" >$ ${Math.round(price*1.2)}.000</span>
                 <span class="price__products">$ ${price} </span>
                 <p class="financing">
                     Hasta en 12 cuotas de <span class="price__card" >$ ${Math.round(financing/12)}.000</span>

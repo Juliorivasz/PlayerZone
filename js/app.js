@@ -45,7 +45,7 @@ point.forEach( (cadaPunto, i) => {
     let count = 0;
     let flash = ()=>{
         // cambia a la primera imagen
-        if(count) {
+        if(count === 4) {
             count = 0;
             let posicion = count;
             let operacion = posicion * -50;
@@ -54,17 +54,17 @@ point.forEach( (cadaPunto, i) => {
             big.style.transform = `translateX(${ operacion }%)`;
 
             // se cambia las clases que muestra el punto seleccionado
-            point[1].classList.remove('active');
+            point[4].classList.remove('active');
             point[count].classList.add('active');
         }else{
             // cambia a la segunda imagen
-            count = 1;
+            count++;
             let posicion = count;
             let operacion = posicion * -50;
 
             big.style.transform = `translateX(${ operacion }%)`;
 
-            point[0].classList.remove('active');
+            point[count-1].classList.remove('active');
             point[count].classList.add('active');
         }
     };
@@ -79,7 +79,7 @@ arrow.forEach((Flecha, i)=> {
             listArrow[1].className = 'activo right';
             listArrowAqua[1].className = 'no-activo right';
             // use la funcion para desplazar la imagen
-            desplazarImagen();          
+            desplazarImagenDerecha();          
             setTimeout(()=>{
                 listArrow[1].className = 'no-activo right';
                 listArrowAqua[1].className = 'activo right';
@@ -89,7 +89,7 @@ arrow.forEach((Flecha, i)=> {
             listArrowAqua[0].style.opacity = 1;
             listArrow[0].className = 'activo right';
             listArrowAqua[0].className = 'no-activo right';
-            desplazarImagen();
+            desplazarImagenIzquierda();
             setTimeout(()=>{
                 listArrow[0].className = 'no-activo right';
                 listArrowAqua[0].className = 'activo right';
@@ -99,21 +99,44 @@ arrow.forEach((Flecha, i)=> {
     })
 })
 
-// funcion para desplazar la imagen al hacer click en las flechas
-const desplazarImagen = ()=>{
-    if(posicion){
-        posicion = 0;
+// funcion para desplazar la imagen al hacer click en las flechas hacia la derecha
+const desplazarImagenDerecha = ()=>{
+
+        if(posicion === 4){
+            posicion = 0;
+            var operacion = posicion * -50;
+            big.style.transform = `translateX(${ operacion }%)`;
+            point[4].classList.remove('active');
+            point[posicion].classList.add('active');
+        }else {
+            posicion++;
+            operacion = posicion * -50;
+            big.style.transform = `translateX(${ operacion }%)`;
+            point[posicion-1].classList.remove('active');
+            point[posicion].classList.add('active');             
+        }
+
+    
+}
+
+// funcion para desplazar la imagen al hacer click en las flechas hacia la izquierda
+const desplazarImagenIzquierda = ()=>{
+
+    if(posicion === 0){
+        posicion = 4;
         var operacion = posicion * -50;
         big.style.transform = `translateX(${ operacion }%)`;
-        point[1].classList.remove('active');
-        point[0].classList.add('active');
+        point[0].classList.remove('active');
+        point[posicion].classList.add('active');
     }else {
-        posicion = 1;
+        --posicion;
         operacion = posicion * -50;
         big.style.transform = `translateX(${ operacion }%)`;
-        point[0].classList.remove('active');
-        point[1].classList.add('active');             
+        point[posicion+1].classList.remove('active');
+        point[posicion].classList.add('active');             
     }
+
+
 }
 
 readProducts();
