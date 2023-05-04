@@ -27,7 +27,7 @@ export function card(section, id, title, imagen, stock, price, financing) {
                     Hasta en 12 cuotas de <span class="price__card" >$ ${Math.round(financing/12)}.000</span>
                     Sin interés del precio de lista
                 </p>
-                <button class="btn__products" type="button" data-id="${id}">
+                <button class="btn__products" type="button" data-id="${id}" data-stock="${stock}">
                 <img class="logos-nav" src="img/logo carrito.png" alt="carrito">
                 <p class="text__btn" >agregar</p>
                 </button>
@@ -38,8 +38,9 @@ export function card(section, id, title, imagen, stock, price, financing) {
     const btnsAgregarAlCarrito = document.querySelectorAll('.btn__products');
     btnsAgregarAlCarrito.forEach((btnAgregarAlCarrito)=> {
         const idCard = btnAgregarAlCarrito.getAttribute('data-id');
-        if(idCard === '1' || idCard === '2') {
-            btnAgregarAlCarrito.onclick = () => alertAuth('No Hay Stock', 'no')
+        const stockCard = btnAgregarAlCarrito.getAttribute('data-stock');
+        if(stockCard === 'false') {
+            btnAgregarAlCarrito.onclick = () => alert('No Hay Stock');
         }else{
             btnAgregarAlCarrito.onclick = () => agregarAlCarrito(idCard);
         }
