@@ -6,7 +6,7 @@ export const baseDeDatos = {
                     nombre: 'Disco Ssd Patriot Elite 120gb',
                     img:'/pages/img/ssd/DISCO-SSD-120GB-PATRIOT-BURST-ELITE-SOLID-SATA-III.webp',
                     stock: true,
-                    precio: '10.500',
+                    precio: '10.000',
                     financiacion: '16.000'
                 },
                 {
@@ -22,7 +22,7 @@ export const baseDeDatos = {
                     nombre: 'Disco Ssd Patriot Burst Elite 480gb',
                     img:'/pages/img/ssd/ssd-480.jpg',
                     stock: true,
-                    precio: '24.300',
+                    precio: '24.000',
                     financiacion: '30.000'
                 },
                 {
@@ -30,7 +30,7 @@ export const baseDeDatos = {
                     nombre: 'Disco Ssd 500gb Crucial Bx500',
                     img:'/pages/img/ssd/ssd-500.jpg',
                     stock: true,
-                    precio: '28.800',
+                    precio: '28.000',
                     financiacion: '35.000'
                 }
             ],
@@ -56,7 +56,7 @@ export const baseDeDatos = {
                     nombre: 'Fuente Aureox Unlimited Series 550w 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente550w.png',
                     stock: true,
-                    precio: '32.500',
+                    precio: '32.000',
                     financiacion: '45.000'
                 },
                 {
@@ -64,7 +64,7 @@ export const baseDeDatos = {
                     nombre: 'Fuente Gamer Evga 600w Br 80 Plus Bronze',
                     img: '/pages/img/fuenteDeAlimentacion/fuente600w.jpg',
                     stock: true,
-                    precio: '48.800',
+                    precio: '48.000',
                     financiacion: '56.300'
                 }
             ],
@@ -100,7 +100,7 @@ export const baseDeDatos = {
                     nombre: 'Mother 1151 Gigabyte H310m Ds2 2.0',
                     img: '/pages/img/motherboard/GigabyteH310m.png',
                     stock: true,
-                    precio: '25.600',
+                    precio: '25.000',
                     financiacion: '36.000'
                 },
                 {
@@ -108,7 +108,7 @@ export const baseDeDatos = {
                     nombre: 'Mother 1200 Asrock H510m-hdv',
                     img: '/pages/img/motherboard/AsrockH510m-hdv.png',
                     stock: true,
-                    precio: '51.100',
+                    precio: '51.000',
                     financiacion: ' 72.900'
                 },
                 {
@@ -152,7 +152,7 @@ export const baseDeDatos = {
                     nombre: 'Procesador Intel Core I3 10100f 4.30ghz Turbo Max 10ma Gen (lga 1200)',
                     img: '/pages/img/procesadores/i310100f.webp',
                     stock: true,
-                    precio: '47.600',
+                    precio: '47.000',
                     financiacion: '66.300'
                 },
                 {
@@ -160,7 +160,7 @@ export const baseDeDatos = {
                     nombre: 'Procesador Intel Core I5 10400f 4,30 Ghz 10 Gen Lga 1200',
                     img: '/pages/img/procesadores/i510400f.jpg',
                     stock: true,
-                    precio: '125.245',
+                    precio: '125.000',
                     financiacion: '180.000'
                 },
                 {
@@ -184,7 +184,7 @@ export const baseDeDatos = {
                     nombre: 'Procesador Amd (am4) Ryzen 5 5600g 4.4ghz 6 Nucleos 12 Hilos',
                     img: '/pages/img/procesadores/amd55600g.jpg',
                     stock: true,
-                    precio: '189.900',
+                    precio: '189.000',
                     financiacion: '276.000'
                 },
                 {
@@ -194,6 +194,26 @@ export const baseDeDatos = {
                     stock: true,
                     precio: '500.000',
                     financiacion: '720.000'
+                }
+            ],
+            monitores: [
+                {
+                    id: '23',
+                    nombre: 'Monitor Predator 27 curvo',
+                    img: '/img/monitor-predator-z.png',
+                    stock: true,
+                    precio: '150.000',
+                    financiacion: '200.000'
+                }
+            ],
+            placaDeVideo: [
+                {
+                    id: '24',
+                    nombre: 'Placa de Video RTX 2060 6gb Gddr6',
+                    img: '/img/placa-de-video-rtx2060.png',
+                    stock: true,
+                    precio: '160.000',
+                    financiacion: '210.000'
                 }
             ]
     }
