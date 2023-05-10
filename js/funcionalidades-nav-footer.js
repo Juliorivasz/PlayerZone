@@ -21,13 +21,14 @@ logo_ir_inicio.addEventListener('click', () => {
 //despliegue de barra de busqueda:
 
 button.addEventListener('click', () => {
+    if(location.pathname !== '/pages/componentes.html'){
+        location.href = '/pages/componentes.html';
+    }
     if(getComputedStyle(input).display === 'flex'){
         input.style.display = 'none' 
         div_barra_busqueda.style = 'position: flex'
         imagenLupa.src = "img/logo lupa.png"; 
         inputBusqueda.value = "";
-        
-
     }
     else{
         input.style.display = 'flex'  
@@ -40,8 +41,6 @@ button.addEventListener('click', () => {
             casilla_usuario.style.display = 'none';
             sub_menu.style.display = 'none';
         };
-        
-        
     }
 });
         
