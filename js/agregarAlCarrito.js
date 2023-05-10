@@ -2,8 +2,6 @@ import { registerProducts, readProducts} from "./Firebase/firebase.js";
 import { pantallaDeCarga } from "./cart/products-added.js";
 // se inicializa la variable que contiene el valor del local-storage
 // para hacer un contador de los productos agregados al carrito
-// let saveStorage = parseInt(localStorage.getItem('count'));
-// let count = localStorage.getItem('count') ? saveStorage + 1 : 1;
 
 export function agregarAlCarrito(idCard) {
 
@@ -40,6 +38,7 @@ export function agregarAlCarrito(idCard) {
 `;
   popUp.appendChild(contenidoPopUp);
 
+  // botones que aparecen en el popup al agregar un producto al carrito
   const continuar = contenidoPopUp.querySelector('div').querySelector('div').querySelector('#continuar');
   const verPedido = contenidoPopUp.querySelector('div').querySelector('div').querySelector('#verPedido');
    

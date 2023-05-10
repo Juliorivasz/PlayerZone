@@ -1,13 +1,11 @@
-import { alertAuth } from "./alertAuth.js";
-import { creadorDeCards } from "./componentes/card-componentes.js";
-import { baseDeDatos } from "./db/db.js";
-
 const formularioSearch = document.querySelector('.container-barra-busqueda');
 const inputSearch = document.querySelector('#id-barra-busqueda');
 const listComponents = document.querySelector('#list__components');
-const main = document.querySelector('main');
+// input de la barra de busqueda
+const inputBusqueda = document.querySelector("#id-barra-busqueda");
 
 
+// al enviar el buscador realiza la busqueda en componentes
 formularioSearch.addEventListener('submit', (e)=> {
     e.preventDefault();
     if(location.pathname === '/pages/componentes.html'){
@@ -15,7 +13,7 @@ formularioSearch.addEventListener('submit', (e)=> {
     }
 })
 
-
+// realiza el filtro de busqueda
 const searchs = (listComponents) => {
     let filter = inputSearch.value.toUpperCase();
     let li = listComponents.querySelectorAll('.title__card');
@@ -30,3 +28,10 @@ const searchs = (listComponents) => {
             }
         }
 }
+
+// al escribir en el input se realiza la busqueda
+inputBusqueda.addEventListener('input', ()=> {
+    if(location.pathname === '/pages/componentes.html'){
+        searchs(listComponents);
+    }
+})
