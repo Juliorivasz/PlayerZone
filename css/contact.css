@@ -1,0 +1,83 @@
+.section__contact {
+    width: 50%; 
+    padding: 5rem;
+}
+
+.text__contacto {
+    margin: 1rem 0;
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.aside__contact {
+    position: absolute; 
+    right: 1%; 
+    top: 28%; 
+    width: 49%; 
+    height: 684px;
+}
+
+.aside__input {
+    padding: .4rem;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    width: calc(100% - 2rem);
+}
+
+#aside__form__nombre {
+    margin-top: 1rem;
+}
+
+#aside__form__correo {
+    margin: 1rem .5rem;
+    width: calc(50% - 1.5rem)
+}
+
+#aside__form__telefono {
+    margin: 1rem .5rem;
+    width: calc(50% - 1.5rem)
+}
+
+#aside__form__mensaje {
+    height: 200px;
+    resize: none;
+}
+
+#aside__form__submit {
+    margin: 1rem;
+    width: calc(100% - 1rem);
+}
+
+.btn__products {
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin: .5rem 1rem;
+    padding: .7rem;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
+    background-size: 200% auto;
+    border: none;
+    transition: .5s;
+}
+
+.btn__products:hover {
+    background-size: 70%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 990px) {
+    .section__contact {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .aside__contact {
+        position: relative;
+        width: 100%;
+    }
+}

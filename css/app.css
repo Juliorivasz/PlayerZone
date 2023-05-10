@@ -532,6 +532,7 @@ body{
 
 .type__products {
     display: flex;
+    flex-direction: column;
     width: 25%;
     height: 200px;
     text-align: center;
@@ -541,6 +542,10 @@ body{
     box-shadow: 0em 1em 1em -1em grey;
     transition: all .5s ease-out;
     background-color: #f4f4f4;    
+}
+
+.img__type__products {
+    width: 100px;
 }
 
 .type__products:hover {
