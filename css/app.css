@@ -421,6 +421,7 @@ body{
     width: 100%;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel .big {
