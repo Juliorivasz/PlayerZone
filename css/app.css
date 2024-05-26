@@ -438,7 +438,6 @@ body{
 }
 
 .carousel .img {
-    width: calc( 100% / 2);
     background-color: tomato;
     min-height: 10vh;
     border-radius: .5rem;
