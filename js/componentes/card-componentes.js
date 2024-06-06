@@ -36,7 +36,7 @@ export function creadorDeCards(db, tipos) {
     return listComponents;
 }
 
-if(location.pathname === '/pages/componentes.html'){
+if(location.pathname === '/pages/componentes'){
     (function cardDeComponentes() {    
         const nombres = [
              'almacenamiento',
