@@ -616,6 +616,7 @@ body{
     margin: 2rem;
     justify-content: space-around;
     background-color: transparent;
+    padding-bottom: 4rem;
 }
 
 .products .container__card {
