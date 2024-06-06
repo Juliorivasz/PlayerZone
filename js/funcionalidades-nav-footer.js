@@ -21,7 +21,7 @@ logo_ir_inicio.addEventListener('click', () => {
 //despliegue de barra de busqueda:
 
 button.addEventListener('click', () => {
-    if(location.pathname !== './pages/componentes'){
+    if(location.pathname !== '/pages/componentes'){
         location.href = './pages/componentes';
     }
     if(getComputedStyle(input).display === 'flex'){
