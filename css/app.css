@@ -775,7 +775,7 @@ body{
     -webkit-animation: rgbBg 20s linear infinite;
     position: relative;
     padding: 3px;
-    padding-bottom: 7rem:
+    padding-bottom: 7rem;
 }
 
 @keyframes rgbBg {
