@@ -8,7 +8,7 @@ const inputBusqueda = document.querySelector("#id-barra-busqueda");
 // al enviar el buscador realiza la busqueda en componentes
 formularioSearch.addEventListener('submit', (e)=> {
     e.preventDefault();
-    if(location.pathname === '/pages/componentes.html'){
+    if(location.pathname === '/pages/componentes'){
         searchs(listComponents);
     }
 })
@@ -31,7 +31,7 @@ const searchs = (listComponents) => {
 
 // al escribir en el input se realiza la busqueda
 inputBusqueda.addEventListener('input', ()=> {
-    if(location.pathname === '/pages/componentes.html'){
+    if(location.pathname === '/pages/componentes'){
         searchs(listComponents);
     }
 })
