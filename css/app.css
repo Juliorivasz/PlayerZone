@@ -792,6 +792,9 @@ footer {
     color: #fff;
     padding: 20px 0;
     font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
   }
   
   .footer-container {
