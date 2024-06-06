@@ -775,6 +775,7 @@ body{
     -webkit-animation: rgbBg 20s linear infinite;
     position: relative;
     padding: 3px;
+    padding-bottom: 7rem:
 }
 
 @keyframes rgbBg {
@@ -796,6 +797,7 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 3;
   }
   
   .footer-container {
