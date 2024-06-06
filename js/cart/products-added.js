@@ -18,7 +18,7 @@ export function productAdded(img, title, price, amount, id,docId) {
     <img src="../../pages/img/papelera.svg" alt="papelera" class="img__delete__products__added" data-id-delete-produt=${id}>
     </div>
     `
-    if(window.location.pathname === '/pages/carrito.html'){
+    if(window.location.pathname === '/pages/carrito'){
         document.querySelector('.list__products').appendChild(li);
         priceTotalProducts();
     }
@@ -94,7 +94,7 @@ export function emptyList(numero) {
             margin: 1rem 0;">No se encuentran productos agregados</h3>
         `;
         const listProducts = document.querySelector('.list__products');
-        if(location.pathname === '/pages/carrito.html'){
+        if(location.pathname === '/pages/carrito'){
             listProducts.appendChild(divBanner);
     }
     }
