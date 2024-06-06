@@ -22,7 +22,7 @@ logo_ir_inicio.addEventListener('click', () => {
 
 button.addEventListener('click', () => {
     if(location.pathname !== '/pages/componentes'){
-        location.href = './pages/componentes';
+        location.href = '/pages/componentes';
     }
     if(getComputedStyle(input).display === 'flex'){
         input.style.display = 'none' 
