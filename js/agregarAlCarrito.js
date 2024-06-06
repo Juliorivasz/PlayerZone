@@ -103,7 +103,7 @@ verPedido.addEventListener('click', ()=> {
     cerrarPopUp();
     pantallaDeCarga();
     setTimeout(()=> {
-      location.href= '/pages/carrito.html';
+      location.href= './pages/carrito';
     }, 1000)
 })
 
