@@ -413,12 +413,15 @@ body{
 
 
 /* carousel */
+
 .section__carousel {
-    padding-top: 100px;
+    padding-top: 5rem;
 }
 
 .carousel {
     width: 100%;
+    height: 400px;
+    max-height: 70vh;
     box-shadow: 1em 1em 1em -1em grey;
     overflow: hidden;
     position: relative;
@@ -438,8 +441,9 @@ body{
 }
 
 .carousel .img {
-    background-color: tomato;
-    min-height: 10vh;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
     border-radius: .5rem;
     box-shadow: 1em 1em 1em -1em grey;
 }
@@ -578,6 +582,50 @@ body{
         background-color: #f4f4f4; 
         transform: scale(1.1);
         border-radius: 0;        
+    }
+
+    .section__carousel {
+        padding-top: 5rem;
+    }
+
+
+   .carousel {
+        /* Aseguramos que el contenedor visible no se desborde */
+        width: 100vw;
+        height: fit-content;
+        overflow: hidden;
+        box-shadow: none;
+    }
+
+    .carousel .big {
+        /* El contenedor de las imágenes tiene un ancho que es el 200% del ancho de la pantalla */
+        width: 200vw;
+        height: 100%;
+        display: flex;
+        transition: all 3s ease;
+        box-shadow: none;
+    }
+
+    .carousel .img {
+        /* Cada imagen ocupa el 100% del ancho de la pantalla */
+        width: 100vw;
+        height: 100%;
+        object-fit: contain;
+        box-shadow: none;
+    }
+
+    .carousel .arrows {
+        top: 40%;
+        width: calc(100% - 2em);
+    }
+    
+    .carousel .arrow {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .carousel .points {
+        display: none !important;
     }
 
 
@@ -775,7 +823,6 @@ body{
     -webkit-animation: rgbBg 20s linear infinite;
     position: relative;
     padding: 3px;
-    padding-bottom: 7rem;
 }
 
 @keyframes rgbBg {
@@ -794,10 +841,7 @@ footer {
     color: #fff;
     padding: 20px 0;
     font-size: 14px;
-    position: fixed;
     width: 100%;
-    bottom: 0;
-    z-index: 3;
   }
   
   .footer-container {
@@ -864,9 +908,6 @@ footer {
 
   @media screen and (max-width: 500px) {
     /* carousel responsive */
-    .arrows {
-        top: 8.5rem !important;
-    }
     
     .points {
         display: none !important;

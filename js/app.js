@@ -3,141 +3,92 @@ import { auth, readProducts } from "./Firebase/firebase.js";
 import { loginCheck } from "./logincheck.js";
 import './loggedOut.js';
 
-const big = document.querySelector('.big')
-const arrow = document.querySelectorAll('.arrow')
-const listArrow = document.querySelectorAll('.no-activo')
-const listArrowAqua = document.querySelectorAll('.activo')
-const point = document.querySelectorAll('.point')
+const big = document.querySelector('.big');
+const arrow = document.querySelectorAll('.arrow');
+const listArrow = document.querySelectorAll('.no-activo');
+const listArrowAqua = document.querySelectorAll('.activo');
+const point = document.querySelectorAll('.point');
 const countCart = document.querySelector('.counter_cart');
+
+let posicion = 0;
+const totalImages = point.length;
+const movement = 100 / totalImages;
 
 countCart.textContent = localStorage.getItem('count') ? localStorage.getItem('count') : 0;
 
-// escuchar el estado de login
-onAuthStateChanged(auth, async (user)=>{
-    // hace la modificacion estilizada para el login
+// Escuchar el estado de login
+onAuthStateChanged(auth, async (user) => {
     loginCheck(user);
-})
+});
 
-// cuando hago click en un punto
-    // Saber la posicion de ese punto
-    // Aplicar un transform traslateX al big
-    // Quitar la clase active de TODOS los puntos 
-    // Añadir la clase active al punto que hemos hecho CLICK 
+// Navegación con los puntos
+point.forEach((cadaPunto, i) => {
+    cadaPunto.addEventListener('click', () => {
+        posicion = i;
+        const operacion = posicion * -movement;
+        big.style.transform = `translateX(${operacion}%)`;
 
-    // recorre el array de point
-point.forEach( (cadaPunto, i) => {
-    // al hacer click en un punto 
-    // cambia de imagen
-    point[i].addEventListener('click', ()=>{
-        let posicion = i;
-        let operacion = posicion * -50;
-
-        big.style.transform = `translateX(${ operacion }%)`;
-
-        point.forEach((cadaPunto, i)=> {
-            point[i].classList.remove('active');
-        })
-
-        point[i].classList.add('active');
-    });
-    // count es el contador y validador de la funcionalidad de cambiar
-    // la imagen en un intervalo de tiempo
-    let count = 0;
-    let flash = ()=>{
-        // cambia a la primera imagen
-        if(count === 4) {
-            count = 0;
-            let posicion = count;
-            let operacion = posicion * -50;
-
-            // se le aplica un estilo a la etiqueta con la clase big 
-            big.style.transform = `translateX(${ operacion }%)`;
-
-            // se cambia las clases que muestra el punto seleccionado
-            point[4].classList.remove('active');
-            point[count].classList.add('active');
-        }else{
-            // cambia a la segunda imagen
-            count++;
-            let posicion = count;
-            let operacion = posicion * -50;
-
-            big.style.transform = `translateX(${ operacion }%)`;
-
-            point[count-1].classList.remove('active');
-            point[count].classList.add('active');
-        }
-    };
-    setInterval(flash,6000);
-})
-let posicion = 0;
-arrow.forEach((Flecha, i)=> {
-    Flecha.addEventListener('click', ()=> {
-        if(arrow[i].alt === 'arrow right'){
-            // cambiar la opacidad de la flecha a color aqua
-            listArrowAqua[1].style.opacity = 1;
-            listArrow[1].className = 'activo right';
-            listArrowAqua[1].className = 'no-activo right';
-            // use la funcion para desplazar la imagen
-            desplazarImagenDerecha();          
-            setTimeout(()=>{
-                listArrow[1].className = 'no-activo right';
-                listArrowAqua[1].className = 'activo right';
-            },200)
-        }else {
-            // cambiar la opacidad de la flecha a color aqua
-            listArrowAqua[0].style.opacity = 1;
-            listArrow[0].className = 'activo right';
-            listArrowAqua[0].className = 'no-activo right';
-            desplazarImagenIzquierda();
-            setTimeout(()=>{
-                listArrow[0].className = 'no-activo right';
-                listArrowAqua[0].className = 'activo right';
-            },200)
-        }
-        
-    })
-})
-
-// funcion para desplazar la imagen al hacer click en las flechas hacia la derecha
-const desplazarImagenDerecha = ()=>{
-
-        if(posicion === 4){
-            posicion = 0;
-            var operacion = posicion * -50;
-            big.style.transform = `translateX(${ operacion }%)`;
-            point[4].classList.remove('active');
-            point[posicion].classList.add('active');
-        }else {
-            posicion++;
-            operacion = posicion * -50;
-            big.style.transform = `translateX(${ operacion }%)`;
-            point[posicion-1].classList.remove('active');
-            point[posicion].classList.add('active');             
-        }
-
-    
-}
-
-// funcion para desplazar la imagen al hacer click en las flechas hacia la izquierda
-const desplazarImagenIzquierda = ()=>{
-
-    if(posicion === 0){
-        posicion = 4;
-        var operacion = posicion * -50;
-        big.style.transform = `translateX(${ operacion }%)`;
-        point[0].classList.remove('active');
+        point.forEach(p => p.classList.remove('active'));
         point[posicion].classList.add('active');
-    }else {
-        --posicion;
-        operacion = posicion * -50;
-        big.style.transform = `translateX(${ operacion }%)`;
-        point[posicion+1].classList.remove('active');
-        point[posicion].classList.add('active');             
+    });
+});
+
+// Carrusel automático
+let flash = () => {
+    if (posicion === totalImages - 1) {
+        posicion = 0;
+    } else {
+        posicion++;
     }
 
+    const operacion = posicion * -movement;
+    big.style.transform = `translateX(${operacion}%)`;
 
-}
+    point.forEach(p => p.classList.remove('active'));
+    point[posicion].classList.add('active');
+};
+
+setInterval(flash, 6000);
+
+// Funcionalidad de las flechas
+arrow.forEach((flecha) => {
+    flecha.addEventListener('click', () => {
+        if (flecha.alt === 'arrow right') {
+            desplazarImagenDerecha();
+        } else {
+            desplazarImagenIzquierda();
+        }
+    });
+});
+
+// Desplazar a la derecha
+const desplazarImagenDerecha = () => {
+    if (posicion === totalImages - 1) {
+        posicion = 0;
+    } else {
+        posicion++;
+    }
+
+    const operacion = posicion * -movement;
+    big.style.transform = `translateX(${operacion}%)`;
+
+    point.forEach(p => p.classList.remove('active'));
+    point[posicion].classList.add('active');
+};
+
+// Desplazar a la izquierda
+const desplazarImagenIzquierda = () => {
+    if (posicion === 0) {
+        posicion = totalImages - 1;
+    } else {
+        posicion--;
+    }
+
+    const operacion = posicion * -movement;
+    big.style.transform = `translateX(${operacion}%)`;
+
+    point.forEach(p => p.classList.remove('active'));
+    point[posicion].classList.add('active');
+};
 
 readProducts();
-
