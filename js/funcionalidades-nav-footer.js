@@ -21,26 +21,34 @@ logo_ir_inicio.addEventListener('click', () => {
 //despliegue de barra de busqueda:
 
 button.addEventListener('click', () => {
-    if(location.pathname !== '/pages/componentes'){
-        location.href = '/pages/componentes';
-    }
-    if(getComputedStyle(input).display === 'flex'){
-        input.style.display = 'none' 
-        div_barra_busqueda.style = 'position: flex'
-        imagenLupa.src = "img/logo lupa.png"; 
-        inputBusqueda.value = "";
-    }
-    else{
-        input.style.display = 'flex'  
-        div_barra_busqueda.style = 'position: absolute; justify-content: center'
-        imagenLupa.src = "img/logo x.png";
-        if(window.innerWidth > 990) {
-            return; // Si el ancho es mayor a 990px no hace nada
+    const isVisible = getComputedStyle(input).display === 'flex';
+
+    if (isVisible) {
+        // If search bar is visible and has a value, submit the search
+        if (inputBusqueda.value.trim() !== '') {
+            if (location.pathname.includes('/pages/componentes')) {
+                // already on page, just trigger input event
+                inputBusqueda.dispatchEvent(new Event('input'));
+            } else {
+                location.href = `/pages/componentes.html?q=${encodeURIComponent(inputBusqueda.value.trim())}`;
+            }
+            return;
         }
-        else {
+        // No value – close the bar
+        input.style.display = 'none';
+        div_barra_busqueda.style.cssText = '';
+        imagenLupa.src = '/img/logo lupa.png';
+        inputBusqueda.value = '';
+    } else {
+        // Open the bar
+        input.style.display = 'flex';
+        div_barra_busqueda.style.cssText = 'position: absolute; justify-content: center;';
+        imagenLupa.src = '/img/logo x.png';
+        inputBusqueda.focus();
+        if (window.innerWidth <= 990) {
             casilla_usuario.style.display = 'none';
             sub_menu.style.display = 'none';
-        };
+        }
     }
 });
         

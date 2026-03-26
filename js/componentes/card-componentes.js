@@ -32,6 +32,10 @@ export function creadorDeCards(db, tipos) {
     });
     listComponents.appendChild(h1);
     listComponents.appendChild(div);
+
+    // Hide skeleton loader once products are ready
+    const skeleton = document.getElementById('skeleton__loader');
+    if (skeleton) skeleton.style.display = 'none';
     console.log(listComponents)
     return listComponents;
 }

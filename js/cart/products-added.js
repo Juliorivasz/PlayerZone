@@ -87,11 +87,19 @@ export function emptyList(numero) {
     if(numero === 0) {
         const divBanner = document.createElement('div');
         divBanner.innerHTML = `
-            <h3 style="background: gray;
-            color: white;
-            text-align: center;
-            padding: 3rem;
-            margin: 1rem 0;">No se encuentran productos agregados</h3>
+            <h3 style="background: rgba(35, 46, 98, 0.1); 
+            color: rgb(35, 46, 98); 
+            border: 2px dashed rgb(35, 46, 98); 
+            border-radius: 10px; 
+            text-align: center; 
+            padding: 4rem 1rem; 
+            margin: 2rem; 
+            font-weight: 500;">
+              Tu carrito está vacío 🛒<br>
+              <span style="font-size: 1rem; color: #666; font-weight: 400; display: block; margin-top: 1rem;">
+                ¡Busca nuestros componentes y agrega tus favoritos!
+              </span>
+            </h3>
         `;
         const listProducts = document.querySelector('.list__products');
         if(location.pathname === '/pages/carrito'){

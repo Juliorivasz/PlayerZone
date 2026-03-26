@@ -1,131 +1,227 @@
-.section__login {
+/* ===== Login & Register Shared Styles ===== */
+.section__login,
+.section__register {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: calc(100vh - 85px);
+    padding: 6rem 1rem 3rem;
 }
 
-
-.container__login {
+.container__login,
+.container__register {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    margin: 8.5rem 1rem;
-
-    background-color: white;
-    border-radius: 10px;
-    width: 600px;
-}
-
-.title__login {
-    margin-top: 4rem;
-}
-
-.form__login {
-    display: flex;
-    flex-direction: column;
-    text-align: initial;
-    margin: 2rem;
-}
-
-section form label {
-    width: 100%;
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 1.5rem .5rem;
-}
-
-#username, #password {
-    border-radius: 5px;
-    width: 100%;
-    padding: .8rem;
-    padding-right: 32px;
-    font-size: 1.3rem;
-    outline: none;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-.container__password__eye {
-    display: flex;
-    justify-content: end;
     align-items: center;
-}
-
-.hidden {
-    display: none;
-}
-
-.message__error {
-    color: red;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-.eye {
-    position: absolute;
-    width: 32px;
-    margin-right: .3rem;
-}
-
-.eye:hover {
-    cursor: pointer;
-}
-
-.btn__login {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    padding: 2.5rem;
     width: 100%;
-    border-radius: 5px;
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 1.3rem;
-    border: none;
-    transition: all .5s;
-    background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
-    background-size: 200% auto;
-    color: #fff;
+    max-width: 480px;
+    text-align: center;
+    animation: fadeInUp 0.4s ease-out;
 }
 
-.btn__login:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 10px 2px grey;
-    background-position: 99%;
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
+.title__login,
+.title__register {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgb(15, 0, 68);
+    margin-bottom: 1.5rem;
+}
+
+/* Social login buttons */
 .redSocial {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    width: auto;
-    margin: 1rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin: 0.4rem 0;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    gap: 10px;
+}
 
+.redSocial img {
+    width: 22px;
+    height: 22px;
+}
+
+.redSocial:hover {
+    border-color: rgb(91, 134, 229);
+    box-shadow: 0 2px 10px rgba(91, 134, 229, 0.2);
+    transform: translateY(-2px);
 }
 
 .text__redSocial {
-    margin: 0 1rem;
+    margin: 0;
 }
 
-#password:focus, #username:focus  {
-    box-shadow: 0px 0px 10px gray;    
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    color: #999;
+    font-size: 0.9rem;
+    gap: 8px;
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
 }
 
-@media screen and (max-width: 990px){
-    .section__login {
-        padding: 20% 0 12% 0;
-    }
+/* Form */
+.form__login,
+.form__register {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    gap: 0.2rem;
 }
 
-@media screen and (max-width: 550px){
-    .section__login {
-        padding: 25% 0 12% 0;
-    }
+section form label,
+.form__register label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    padding: 0.6rem 0 0.2rem;
+    width: 100%;
+}
 
-    .container__login {
+#username,
+#password,
+.input__register {
+    border-radius: 8px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 36px;
+    font-size: 1rem;
+    outline: none;
+    border: 1.5px solid #ddd;
+    background: #f9f9f9;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+#username:focus,
+#password:focus,
+.input__register:focus {
+    border-color: rgb(91, 134, 229);
+    box-shadow: 0 0 0 3px rgba(91, 134, 229, 0.15);
+    background: #fff;
+}
+
+.container__password__eye {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.container__password__eye input {
+    width: 100%;
+}
+
+.eye {
+    position: absolute;
+    right: 10px;
+    width: 24px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.eye:hover {
+    opacity: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.message__error {
+    color: #e53935;
+    font-size: 0.82rem;
+    margin: 0.2rem 0 0.4rem;
+    font-weight: 500;
+}
+
+/* Submit / Login button */
+.btn__login[type="submit"],
+.btn__register {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1.2rem;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    background: linear-gradient(to right, rgb(54, 209, 220) 0%, rgb(91, 134, 229) 51%, rgb(54, 209, 220) 100%);
+    background-size: 200% auto;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.btn__login[type="submit"]:hover,
+.btn__register:hover {
+    background-position: 100%;
+    box-shadow: 0 6px 20px rgba(91, 134, 229, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Register-specific */
+.container__input__register {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+/* Footer link */
+.form-footer-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.form-footer-link a {
+    color: rgb(91, 134, 229);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media screen and (max-width: 550px) {
+    .container__login,
+    .container__register {
         border-radius: 0;
-        width: auto;
-    }
-
-    .eye {
-        width: 40px;
+        max-width: 100%;
+        padding: 2rem 1.2rem;
     }
 }
