@@ -29,9 +29,9 @@ export function creadorDeCards(db, tipos) {
         db.componentes[compo].forEach( (producto)=> {
             card(div, producto.id, producto.nombre, producto.img, producto.stock, producto.precio, producto.financiacion);
         })
-        listComponents.appendChild(h1);
-        listComponents.appendChild(div);
     });
+    listComponents.appendChild(h1);
+    listComponents.appendChild(div);
     console.log(listComponents)
     return listComponents;
 }

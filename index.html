@@ -56,8 +56,8 @@
         <section class="section__carousel">
             <div class="carousel">
                 <div class="big">
-                    <img src="./img/pc-gamer-principal.jpg" alt="imagen 1" class="img">
-                    <img src="./img/pc-gamer-secundaria.jpg" alt="imagen 2" class="img">                   
+                    <img src="./img/pc-gamer-principal.jpg" alt="imagen 1" class="img" fetchpriority="high">
+                    <img src="./img/pc-gamer-secundaria.jpg" alt="imagen 2" class="img" loading="lazy">                   
                 </div>
                 <ul class="arrows">
                     <li class="activo left"><img class="arrow" src="./img/arrow-left-aqua.svg" alt="arrow left"></li>
@@ -73,10 +73,10 @@
         </section>
         <section class="section__type__products">
             <ul class="ul__type__products">
-                <li class="type__products"><h1>Pc para Diseño</h1><img src="/img/diseño.png" alt="diseño" class="img__type__products"></li>
-                <li class="type__products"><h1>Pc Gamer</h1><img src="/img/joystick.png" alt="gamer" class="img__type__products"></li>
-                <li class="type__products"><h1>Pc para Oficina</h1><img src="/img/oficina.png" alt="oficina" class="img__type__products"></li>
-                <li class="type__products"><h1>Pc para Edicion de Video</h1><img src="/img/edicionDeVideo.png" alt="video" class="img__type__products"></li>
+                <li class="type__products"><h1>Pc para Diseño</h1><img src="/img/diseño.png" alt="diseño" class="img__type__products" loading="lazy"></li>
+                <li class="type__products"><h1>Pc Gamer</h1><img src="/img/joystick.png" alt="gamer" class="img__type__products" loading="lazy"></li>
+                <li class="type__products"><h1>Pc para Oficina</h1><img src="/img/oficina.png" alt="oficina" class="img__type__products" loading="lazy"></li>
+                <li class="type__products"><h1>Pc para Edicion de Video</h1><img src="/img/edicionDeVideo.png" alt="video" class="img__type__products" loading="lazy"></li>
             </ul>
         </section>
         <section class="container__products">
@@ -131,10 +131,10 @@
             <p>&copy; 2023 Todos los derechos reservados.</p>
           </div>
     </footer>
-    <script type="module" src="/js/searchProducts.js"></script>
-    <script type="module" src="js/app.js"></script>
-    <script type="module" src="js/card.js"></script>
-    <script type="module" src="js/funcionalidades-nav-footer.js"></script>
+    <script type="module" src="/js/searchProducts.js" defer></script>
+    <script type="module" src="js/app.js" defer></script>
+    <script type="module" src="js/card.js" defer></script>
+    <script type="module" src="js/funcionalidades-nav-footer.js" defer></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

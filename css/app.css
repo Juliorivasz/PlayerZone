@@ -9,6 +9,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background: url('/img/azul\ con\ violeta.jpg');
     background-size: cover;
