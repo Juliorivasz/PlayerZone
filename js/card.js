@@ -5,15 +5,11 @@ import { alertAuth } from "./alertAuth.js";
 const products = document.querySelector('.products');
 
 export function card(section, id, title, imagen, stock, price, financing) { 
-    // if (!section) {
-    //     console.error("El elemento section es nulo o indefinido");
-    //     return;
-    // }
     const div = document.createElement('div');
     div.classList.add('container__card');
     div.innerHTML = `
             <div class="container__img__card">
-                <img class="img__card" src=${imagen}>
+                <img class="img__card" src=${imagen} loading="lazy">
             </div>
             <div class="container__info__card">
                 <h1 class="title__card">${title}</h1>
@@ -33,18 +29,16 @@ export function card(section, id, title, imagen, stock, price, financing) {
                 </button>
             </div>`;
 
-    section.appendChild(div);
+    // Attach click listener directly to THIS button before appending to section.
+    // This avoids re-querying the DOM (which fails when section is a DocumentFragment).
+    const btn = div.querySelector('.btn__products');
+    if (String(stock) === 'false') {
+        btn.onclick = () => alert('No Hay Stock');
+    } else {
+        btn.onclick = () => agregarAlCarrito(id);
+    }
 
-    const btnsAgregarAlCarrito = document.querySelectorAll('.btn__products');
-    btnsAgregarAlCarrito.forEach((btnAgregarAlCarrito)=> {
-        const idCard = btnAgregarAlCarrito.getAttribute('data-id');
-        const stockCard = btnAgregarAlCarrito.getAttribute('data-stock');
-        if(stockCard === 'false') {
-            btnAgregarAlCarrito.onclick = () => alert('No Hay Stock');
-        }else{
-            btnAgregarAlCarrito.onclick = () => agregarAlCarrito(idCard);
-        }
-    })
+    section.appendChild(div);
     return div;
 };
 

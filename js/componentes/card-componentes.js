@@ -36,7 +36,25 @@ export function creadorDeCards(db, tipos) {
     // Hide skeleton loader once products are ready
     const skeleton = document.getElementById('skeleton__loader');
     if (skeleton) skeleton.style.display = 'none';
-    console.log(listComponents)
+
+    // If the user arrived via ?q= search redirect, apply the pending filter now
+    if (window.__pendingSearchQuery) {
+        const q = window.__pendingSearchQuery;
+        window.__pendingSearchQuery = null; // clear flag
+        const inputBusqueda = document.querySelector('#id-barra-busqueda');
+        if (inputBusqueda) inputBusqueda.value = q;
+        // Re-query the section (it's now in the DOM)
+        const updatedList = document.querySelector('#list__components');
+        if (updatedList) {
+            const li = updatedList.querySelectorAll('.title__card');
+            const cards = updatedList.querySelectorAll('.container__card');
+            const filter = q.toUpperCase();
+            for (let i = 0; i < li.length; i++) {
+                cards[i].style.display = li[i].textContent.toUpperCase().includes(filter) ? '' : 'none';
+            }
+        }
+    }
+
     return listComponents;
 }
 
